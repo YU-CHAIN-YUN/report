@@ -1,0 +1,2309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 響應式 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 改變圖示連結 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="icon" href="./moon-stars-fill.svg" />
+    <title>認識塔羅TAROT</title>
+
+    <!-- 引用CDN連結 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/card_array.css" />
+    <link rel="stylesheet" href="./css/Card_meaning.css" />
+    <link rel="stylesheet" href="./css/Content_font.css" />
+    <link rel="stylesheet" href="./css/floating_button.css" />
+    <link rel="stylesheet" href="./css/My_Background.css" />
+    <link rel="stylesheet" href="./css/My_carousel.css" />
+    <link rel="stylesheet" href="./css/Draw _Cards.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script>
+      window.console = window.console || function (t) {};
+    </script>
+  </head>
+
+  <body>
+    <div>
+      <!-- 導覽列 -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a
+            class="navbar-brand text-secondary bi bi-moon-stars fw-bold"
+            href="#"
+          >
+            認識塔羅TAROT  123</a
+          >
+          <!-- 這裡要首頁加Logo -->
+          <button
+            class="navbar-toggler bg-body"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+            <!-- 右側導覽列縮圖按鈕 -->
+          </button>
+          <!-- 導覽列 -->
+          <div
+            class="collapse navbar-collapse rounded-pill bg-dark bg-opacity-50 px-5"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-light fw-bold"
+                  aria-current="page"
+                  href="#"
+                  >首頁</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light fw-bold" href="#Card_meaning"
+                  >塔羅牌義</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light fw-bold" href="#use_card_array"
+                  >牌陣使用方法</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-light fw-bold"
+                  href="#Common_card_formations"
+                  >塔羅常見牌陣</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-light fw-bold"
+                  href="https://forms.gle/etR1Wqvbp7EAAQ6P9"
+                  >問題反饋</a
+                >
+              </li>
+              <li>
+                <!-- 按鈕觸發背景下拉選單 -->
+                <div class="py-1 ms-2" style="position: relative; z-index: 1">
+                  <button
+                    class="btn rounded-circle text-dark fw-bold"
+                    id="dropdownMenuButton"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    style="
+                      background: #000;
+                      border-color: #fff;
+                      width: 10px;
+                      height: 25px;
+                    "
+                  >
+                    <ul
+                      class="dropdown-menu dropdown-menu-end"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <li>
+                        <a
+                          href="#"
+                          class="dropdown-item"
+                          onclick="changeBackground('linear-gradient(to right, #f3e6ff, #d6f5ff)', '#fff')"
+                        >
+                          <span class="color-circle color-option-1"></span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          class="dropdown-item"
+                          onclick="changeBackground('linear-gradient(to right, #f2d6ff, #b3e0ff)', '#000')"
+                        >
+                          <span class="color-circle color-option-2"></span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          class="dropdown-item"
+                          onclick="changeBackground('linear-gradient(to right, #ffd6e5, #ffcc99)', '#444')"
+                        >
+                          <span class="color-circle color-option-3"></span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          class="dropdown-item"
+                          onclick="changeBackground('linear-gradient(to right, #e0f7fa, #b2ebf2)', '#333')"
+                        >
+                          <span class="color-circle color-option-4"></span>
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="#"
+                          class="dropdown-item"
+                          onclick="changeBackground('#000', '#fff')"
+                        >
+                          <span class="color-circle color-option-5"></span>
+                        </a>
+                      </li>
+                    </ul>
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- 主頁標題 -->
+      <div class="container" style="width: 100%;">
+        <section class="m-5" style="height: 100%">
+          <div class="text-Dark" style="width: 100%">
+            <br /><br /><br /><br />
+            <h1
+              contenteditable="true"
+              class="text1 effect01"
+              style="height: 10%"
+            >
+              線上塔羅學習
+              <p contenteditable="true" class="text2 effect02">
+                解讀命運之語，指導心靈之路。
+                無論愛情、事業或未來，讓塔羅為你揭開答案的面紗
+              </p>
+            </h1>
+            <br /><br />
+            <div translate="no" class="py-5">
+              <div id="drag-container">
+                <div id="spin-container">
+                  <!-- Add your images (or video) here -->
+                  <img src="./image/大阿卡那(22張)/0愚者.webp" />
+                  <img src="./image/大阿卡那(22張)/1魔術師.webp" />
+                  <img src="./image/大阿卡那(22張)/2女祭師.webp" />
+                  <img src="./image/大阿卡那(22張)/3皇后.webp" />
+                  <img src="./image/大阿卡那(22張)/4皇帝.webp" />
+                  <img src="./image/大阿卡那(22張)/5教皇.webp" />
+                  <img src="./image/大阿卡那(22張)/6戀人.webp" />
+                  <img src="./image/大阿卡那(22張)/7戰車.webp" />
+                  <img src="./image/大阿卡那(22張)/8力量.webp" />
+                  <img src="./image/大阿卡那(22張)/9隱者.webp" />
+                  <img src="./image/大阿卡那(22張)/10命運之輪.webp" />
+
+                  <!-- Text at center of ground -->
+                  <p>TAROT WORLD</p>
+                </div>
+                <div id="ground"></div>
+              </div>
+              <div id="music-container"></div>
+
+              <script id="rendered-js">
+                // You can change global variables here:
+                var radius = 240; // how big of the radius
+                var autoRotate = true; // auto rotate or not
+                var rotateSpeed = -60; // unit: seconds/360 degrees
+                var imgWidth = 120; // width of images (unit: px)
+                var imgHeight = 170; // height of images (unit: px)
+
+                // Link of background music - set 'null' if you dont want to play background music
+                var bgMusicURL =
+                  "https://api.soundcloud.com/tracks/143041228/stream?client_id=587aa2d384f7333a886010d5f52f302a";
+                var bgMusicControls = true; // Show UI music control
+
+                // ===================== start =======================
+                // animation start after 1000 miliseconds
+                setTimeout(init, 1000);
+
+                var odrag = document.getElementById("drag-container");
+                var ospin = document.getElementById("spin-container");
+                var aImg = ospin.getElementsByTagName("img");
+                var aVid = ospin.getElementsByTagName("video");
+                var aEle = [...aImg, ...aVid]; // combine 2 arrays
+
+                // Size of images
+                ospin.style.width = imgWidth + "px";
+                ospin.style.height = imgHeight + "px";
+
+                // Size of ground - depend on radius
+                var ground = document.getElementById("ground");
+                ground.style.width = radius * 3 + "px";
+                ground.style.height = radius * 3 + "px";
+
+                function init(delayTime) {
+                  for (var i = 0; i < aEle.length; i++) {
+                    aEle[i].style.transform =
+                      "rotateY(" +
+                      i * (360 / aEle.length) +
+                      "deg) translateZ(" +
+                      radius +
+                      "px)";
+                    aEle[i].style.transition = "transform 1s";
+                    aEle[i].style.transitionDelay =
+                      delayTime || (aEle.length - i) / 4 + "s";
+                  }
+                }
+
+                function applyTranform(obj) {
+                  // Constrain the angle of camera (between 0 and 180)
+                  if (tY > 180) tY = 180;
+                  if (tY < 0) tY = 0;
+
+                  // Apply the angle
+                  obj.style.transform =
+                    "rotateX(" + -tY + "deg) rotateY(" + tX + "deg)";
+                }
+
+                function playSpin(yes) {
+                  ospin.style.animationPlayState = yes ? "running" : "paused";
+                }
+
+                var sX,
+                  sY,
+                  nX,
+                  nY,
+                  desX = 0,
+                  desY = 0,
+                  tX = 0,
+                  tY = 10;
+
+                // auto spin
+                if (autoRotate) {
+                  var animationName = rotateSpeed > 0 ? "spin" : "spinRevert";
+                  ospin.style.animation = `${animationName} ${Math.abs(
+                    rotateSpeed
+                  )}s infinite linear`;
+                }
+
+                // add background music
+                if (bgMusicURL) {
+                  document.getElementById("music-container").innerHTML += `
+
+`;
+                }
+
+                // setup events
+                document.onpointerdown = function (e) {
+                  clearInterval(odrag.timer);
+                  e = e || window.event;
+                  var sX = e.clientX,
+                    sY = e.clientY;
+
+                  this.onpointermove = function (e) {
+                    e = e || window.event;
+                    var nX = e.clientX,
+                      nY = e.clientY;
+                    desX = nX - sX;
+                    desY = nY - sY;
+                    tX += desX * 0.1;
+                    tY += desY * 0.1;
+                    applyTranform(odrag);
+                    sX = nX;
+                    sY = nY;
+                  };
+
+                  this.onpointerup = function (e) {
+                    odrag.timer = setInterval(function () {
+                      desX *= 0.95;
+                      desY *= 0.95;
+                      tX += desX * 0.1;
+                      tY += desY * 0.1;
+                      applyTranform(odrag);
+                      playSpin(false);
+                      if (Math.abs(desX) < 0.5 && Math.abs(desY) < 0.5) {
+                        clearInterval(odrag.timer);
+                        playSpin(true);
+                      }
+                    }, 17);
+                    this.onpointermove = this.onpointerup = null;
+                  };
+
+                  return false;
+                };
+
+                document.onmousewheel = function (e) {
+                  e = e || window.event;
+                  var d = e.wheelDelta / 20 || -e.detail;
+                  radius += d;
+                  init(1);
+                };
+                //# sourceURL=pen.js
+              </script>
+            </div>
+            <br /><br />
+            <div class="text-center d-block">
+              <button
+                id="draw-card-btn"
+                class="btn text-light my-5"
+                style="
+                  background-color: rgb(217, 132, 144);
+                  border: 1px solid white;
+                "
+              >
+                抽出今日運勢
+              </button>
+              <!-- 顯示隨機抽到的塔羅牌 -->
+              <div id="tarot-card">
+                <img id="random-card" class="img-fluid" />
+              </div>
+              <!-- 按鈕：隨機抽牌 -->
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div style="padding: 5%">
+      <div
+        class="rounded-pill bg-dark bg-opacity-50"
+        style="padding: 1%; margin-bottom: 50px"
+      >
+        <h1 class="p-4 fw-bold text3 effect03" id="know_tarot">認識塔羅牌</h1>
+        <p class="px-5 fs-5 text4 effect04">
+          塔羅牌起源於14至15世紀的歐洲，最初是一種紙牌遊戲，後來在18世紀被神秘學者賦予占卜與心理啟示的功能，成為靈性探索工具。
+          是一種具有神秘學與心理分析背景的占卜工具，由78張牌組成，分為22張大阿爾克那和56張小阿爾克那。大阿爾克那代表人生重要階段或事件，小阿爾克那分為四種花色（權杖、聖杯、寶劍、錢幣），象徵日常生活的各種面向。每張牌的圖像與象徵意義引導使用者反思內在情感、挑戰或未來可能的發展。塔羅牌常用於探索自我、做出決策或尋求心理支持。
+        </p>
+      </div>
+      <!-- 卡牌牌意 -->
+      <div>
+        <div class="container">
+          <!-- 大阿卡那 -->
+          <h1 class="text-center mb-4 text3 effect03" id="Card_meaning">
+            大阿卡那
+          </h1>
+          <h5 class="text-center effect03">點擊圖片查看詳細內容</h5>
+          <div class="gallery d-flex flex-wrap justify-content-center">
+            <!-- 圖片列表 -->
+            <!-- 愚者 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/0愚者.webp"
+                alt="愚者"
+                data-description='{
+                  "keyword": "新開始、流浪、自發、貌似愚蠢、大膽、天真",
+                  "upright": "流浪、活力無限又潛力無限，追求夢想，未知，天真的愛",
+                  "reversed": "漂泊，冒險，魯莽，冒失，瘋狂，無視損失，靈魂墮落，內心空虛，感情輕浮",
+                  "meaning": "有點兒「缺心眼」的年輕人不顧掉入懸崖的危險，正昂首闊步向前。「愚人是追尋經驗的心靈。」愚人在塔羅牌中的序號為0號，「0」不是沒有，而是包含宇宙萬物。這個年輕人小丑裝扮，穿著花哨的衣裝，神采飛揚，仿佛一點兒憂愁也沒有，他雖然莽撞、無知，有點兒頭腦發熱，但卻始終不會停下追求的腳步。他是活在當下的樂天派，他對腳下的懸崖熟視無睹，所謂「無知者無畏」，正是這個道理。他的人生才剛剛開始，因為經驗的缺乏和多而無用的激情，他會遇到很多麻煩，前途未卜，但誰又能說，他所抵達的不正是希望之所在呢?"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>愚者</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 魔術師 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/1魔術師.webp"
+                alt="魔術師"
+                data-description='{
+                  "keyword": "行動、專心、有意識的行動、控制力、溝通、主動",
+                  "upright": "善於溝通，思維縝密，自信，好開始，發展順利，技巧精湛，新戀情",
+                  "reversed": "方向錯誤，被騙或失敗，局面失控，缺乏熱情和創造力，愛情停滯",
+                  "meaning": "魔術師有著自信的笑容和炯炯有神的眼睛，右手通天左手接地，代表著溝通，似乎有著操縱宇宙的力量和非凡的創造力。魔術師正在施行法術，他有著清晰的思辨能力，非常主動，有堅強的意志和純潔的內心，富有行動力和創造力，和一種超乎尋常的力量，能對整個世界產生影響。魔術師的序號為「1」。 「1」是所有數字的開始，是無限潛力的開端，預示著只要開始，就會獲得成功，美好的夢想都會化為可以觸摸的現實。 魔術師是一種積極進取的態度，並且具備一種潛在的能量，但前路漫漫，一切畢竟才剛剛並始。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>魔術師</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 女祭司 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/2女祭師.webp"
+                alt="女祭司"
+                data-description='{
+                  "keyword": "潛力、直覺、智慧、神秘、消極、靜止",
+                  "upright": "潛力，靜默與堅持，深思，洞察力敏銳，直覺準確，平淡的戀情",
+                  "reversed":"挑剔，貪心，短視，不適易的激情，自大，單戀",
+                  "meaning": "如果魔術師象徵著陽，那麽女教主則象徵著陰，代表沈潛和隱藏的事物。 女教主想法深遠，似乎有些神秘莫測，她的腳上有新月，頭頂有王冠，萬物全在她的掌握之中。 女教主真覺敏銳，對於神秘領域的事情，比任何人都了解得透徹，體悟得深刻。 女教主關注心靈的成長，但是對情感，她往往會采取冷漠或回避的態度。 預測時遇到這張牌，很可能是提醒當事人要靜靜觀察，按直覺行事才是解決問題的方式，也就是聽從內心隱秘的召喚。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>女祭司</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 皇后 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/3皇后.webp"
+                alt="皇后"
+                data-description='{
+                  "keyword": "母性、喜悅、體驗、感覺、豐富的、自然、豐收",
+                  "upright": "母愛，喜悅，優雅，幸福，成功，收穫，體貼，豐收，生產，藝術，大自然的連繫，感受力強，浪費的戀愛",
+                  "reversed":"冷淡，缺乏上進心，歡樂消失，散漫，困難，享樂，環境險惡，自負，感情受挫",
+                  "meaning": "皇后端坐於生機盎然的大地之上，歡愉不失優雅，有著母儀天下的風度，她的身上有著優雅女性的全部美德， 跟女教主相比，皇后更感性，更接近生活中的偉大女性。 如果當事人是男性，則提醒你同桌女性可能正在發生關聯或當事人本人有點女性傾向。 最原始的皇后牌正位解釋：「收獲，行為主動，暗中潛藏的未知事物，無知或猶豫。」後來，牌義經過發展，除了豐收和歡樂外，其餘的則差別很大，皇后牌處於正位時，往往代表著光明和豐收，以及母性的全部優點，很少有無知和猶豫方面的意思。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>皇后</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 皇帝 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/4皇帝.webp"
+                alt="皇帝"
+                data-description='{
+                  "keyword": "父性、權威、規則、秩序、強調結構、統治",
+                  "upright": "父親，光榮，權力，勝利，影響力，堅強意志，責任，孤單;缺乏感情交流",
+                  "reversed":"幼稚，挫折，武斷，濫用權力，冷酷，占有慾和控制慾強，感情勉強",
+                  "meaning": "皇帝是一國之尊，也是男權的代表人物，是父權至上的象徵。 他表情冷峻，威懾天下，開疆辟土。皇帝擁有主宰物質世界的支配力，代表道德戒律與禁令。 皇帝牌處於正位時，總是首先代表著理性、秩序、權威和光榮。 但也不能否認，皇帝既可以是明君，也可能是暴君，所以皇帝牌是可好可壞的。 他高高在上的威儀雖然總能屈服他的人民，但也給人高處不勝寒的感覺。 預測感情的，無論皇帝牌處於正位或逆位，多多少少都有感情冷漠這樣的含義在里面。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>皇帝</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 教皇 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/5教皇.webp"
+                alt="教皇"
+                data-description='{
+                  "keyword": "教育、一致、信仰體系、群體認同、援助、傳統",
+                  "upright": "援助同情心，寬宏，指導，精神滿足，遵守規則，志願者，兩情相悅",
+                  "reversed":"惡意規勸，孤軍作戰，上當，援助中斷，願望無法達成，被放棄，感情失落",
+                  "meaning": "教主是上帝的羔羊，他啟示真理又傳播真理。教主當然與宗教有著密不可分的關系，但教主不同於女祭司，並非神秘而高高在上，他是入世的，他的任務是在人群中傳播上帝的旨意。 如果說，皇帝是提供物質保障的父親，那麽教主則是向人群提供心靈滋養的精神之父。心靈的成長是一個漫長艱難的過程，精神教養同物質保障一樣重要。教主為我們的心靈負責，告訴我們什麽是道德的，什麽是不道德的，什麽是正義的，什麽是非正義的，他指導我們走向正途。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>教皇</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 戀人 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/6戀人.webp"
+                alt="戀人"
+                data-description='{
+                  "keyword": "選擇、愛情、性欲、結合、關系、個人信仰、價值",
+                  "upright": "選擇，考驗，健康，流行，魅力，增加朋友，合作良好，性欲，童貞及甜蜜的愛",
+                  "reversed":"經不起誘惑，縱慾，反復，友情變淡，厭倦，爭吵，優柔寡斷，決定錯誤，愛情挫折",
+                  "meaning": "圖中赤裸著的男女是亞當與夏娃，亞當深情地望著夏娃，夏娃則望著天使，他們似乎初涉人世，表情坦然， 夏娃似乎在請求天使為他們的愛情祝福。這張牌解釋是：「亞當與夏娃誘人的軀體，象徵著未受有形物質污染之前的青春體童貞、純真和愛。」塔羅中的情侶牌雖取裁於《聖經》中的這典故，但更多取的是它的引申義：選擇。 如果預測時，不關乎愛情，那麽義則是廣泛的，往往暗示著當事人面臨抉擇，需要做出判斷，有結合和選擇的雙重意思。 情侶牌在象徵愛情時，往往有著欲望，性欲、肉體等方面的涵義，這是它與另一張通常象徵愛情的牌「聖杯二」的差別所在。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>戀人</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 戰車 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/7戰車.webp"
+                alt="戰車"
+                data-description='{
+                  "keyword": "勝利、自我聲明、意志、強勁的控制、自律",
+                  "upright": "行動，精力充沛，勝利，克服障礙，自立，嘗試，控制，自我主張",
+                  "reversed":"糾紛，阻滯，違反規則，對手，暴力，頑固，失敗，錯誤決定，自私自利",
+                  "meaning": "駕著戰車的王子，他的視力所及只有前方，他的心中只有征服異鄉的滾燙雄心。 戰車的首要牌義不言自明：堅定和強大的意志力。 從牌面上也可以看到，王子手中沒有繮繩，他的意念便可以控制一切。 6號牌是情侶，主要牌義是重大選擇，而接下來的戰車便是選擇後的實際行動。 預測時遇到這張牌時，意味著當事人面臨某種程度的挑戰;那麽這張 牌提醒求問者，不放棄努力進取，才是你唯一正確的選項。 當事人在某件事情的處理上，雖然可能遇到競爭對象，但最後的勝利者一定是你。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>戰車</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 力量 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/8力量.webp"
+                alt="力量"
+                data-description='{
+                  "keyword": "顯示力量、有同情心、有耐心、控制得宜、勇氣",
+                  "upright": "軟控制，以柔克剛，外柔內剛，勇氣，行勁大膽，善於決定，新發展，健康，真心的愛",
+                  "reversed":"膽小，屈服，沒有實踐便放棄，虛榮，懦弱，沒有耐性，經不起誘惑",
+                  "meaning": "這是一張意義明確，讓人振奮的牌。畫面中的女人很輕松地馴服了獅子， 這個以柔克剛的女性，她的神聖力量來自她有著強大、不可戰勝的意志力。整個畫面充滿了一種讓人 驚異的和諧之美。一只獅子，一個女人，看似不成對比的二種力量，卻以弱者的勝利強者的馴服而告終，這也暗示了力量的意義，並非蠻力。 而是指內心的強韌。她表情坦然得像一個慈愛的母親，但溫和中自有一種威儀，一種自信的光芒圍繞著她。 預測時，這張牌的主要牌意指稱當事人可以通過意志力去獲得成功。 處理關系的時候要柔和，目光要長遠，不能意氣用事。 如果是逆位則表示當事人被一種蠻力和表面強大的力量所控制。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>力量</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 隱者 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/9隱者.webp"
+                alt="隱者"
+                data-description='{
+                  "keyword": "追尋、反省、引導、尋求、尋求孤獨、謹慎、指引",
+                  "upright": "智者，冷靜，孤獨，自足，善傾聽，尋求，接受勸誡，單身，退出感情關係",
+                  "reversed":"無視勸告，孤僻，自卑，擔心，幼稚，因謹慎而失敗，難耐孤獨",
+                  "meaning": "「隱者是追尋的靈魂。」智者穿著一件鬥篷，站在冰山之巔，在黑暗中提著一盞燈，他一心一意追求真理，雖遠離塵囂，但他的目光始終深情地俯視著人類。 大阿卡那牌中的「愚人」已經由一個莽撞的年輕人成長為了白發蒼蒼的老者，他可能失去了激情，但智慧和經驗卻與日俱增。 他現在冷眼看人生，但並不表示他沒有內在的熱情。 經過春花秋月的生活，他在反思自己生活中諸多失誤的同時，也思考著如何給人類關懷，因為他愛人類。 隱者甘願孤獨，在夜色中行走，時刻想著如何將人類帶出思想和世俗生活的籠牢。 預測中的隱者牌，首要牌義是追尋和指引，也代表處事冷靜，有時也表示你可能需要聽取長者或前輩的意見。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>隱者</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 命運之輪 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/10命運之輪.webp"
+                alt="命運之輪"
+                data-description='{
+                  "keyword": "命運、轉變、機會、進展、運動",
+                  "upright": "好的變化，意外驚喜，新機會，幸運開始，問題解決，命中注定的姻緣出現",
+                  "reversed":"連續不幸，挫折，計劃泡湯，往壞處發展，惡性循瓔，愛情曇花一現",
+                  "meaning": "輪子不斷的轉動代表永不停息的宇宙運行和人生的浮沈，仿佛訴說著滾滾紅塵中的生死和生命地流轉。 命運之輪是大阿爾克那牌中唯一沒有人物的大牌，“人物”的缺失，正顯示了在命運的戰場上，沒有人是純粹意義上的勝利者。 人生猶如一場勝負難料的博弈，有的人先贏後輸，有的人先輸後贏，有的人一輩子無病無災、平平安安，有的人卻危運不斷。 所謂好壞的轉變，也只是相對意義上的。不過，預測時出現命運之輪卡牌的正位，主要牌義還是指稱事情正在向好的方向轉化，而逆位則有事情向壞的方向發展的隱憂。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>命運之輪</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 正義 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/11正義.webp"
+                alt="正義"
+                data-description='{
+                  "keyword": "正義、決定、平衡、法律、責任、因果",
+                  "upright": "公正，合理，裁決，討回，公道，誠實，光明正大，幫助弱者，替對方考慮的戀人",
+                  "reversed":"不公平，受人欺騙，糾紛，偏頗，難以兩全，逃避責任，屈辱感，計較感情的回報",
+                  "meaning": "正義女神像是在對天起誓:「上帝，我是值得你信賴的！」 正義女神維護正義，力求公平，透露出冷靜而淩厲的氣質。 正義女神是法律的化身。她左手拿天平;右手持劍高舉，象徵著她的公正和公平。 她身披紅袍，頭戴金冠，綠色的披肩用方形扣子扣起，端坐於石凳之上，甚至她的面容也被刻意賦予了中性形象，如同她為人處事，不偏不倚是唯一的準則。 預測時出現正義牌，可能提醒你需要做出某項決定，這件事需要你用內心的道德力量來加以平衡和解決，而不可為了一己私慾偏袒自己或與自己親近的人。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>正義</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 倒吊人 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/12倒吊人.webp"
+                alt="倒吊人"
+                data-description='{
+                  "keyword": "順其自然、懸吊、反向的、犧牲、換個角度",
+                  "upright": "自我犧牲，考驗，沉潛，順從，脫離最糟的狀態，角度轉換，幽默，清心寡慾",
+                  "reversed":"拖延、漠不關心、停滯不前、避免犧牲、冷漠",
+                  "meaning": "這是一位被倒吊在T字形樹上的年輕人，他兩只手放在身後，一只腳屈起，構成一個象徵著完成的煉金術符號，表明偉大事業的完成。 倒吊人是塔羅牌中的絕對另類，有點兒「後現代」的味道，和隱者牌一樣，都有冷眼看世界的意思，倒吊人看似有點兒「吊兒郎當」，實際是對世界有思考的人，是對生活想法的人，他「看慣秋月春風」，也見證過大風大浪，所以才想著換個角度思考問題，也就是倒個身子來看世界。 倒吊人就像幸福的基督，自我犧牲卻自得其樂，冷靜中帶著少許嘲弄。倒吊人牌正位的牌義是有償的犧牲，如遇困難，該牌也暗示你要迂回、靈活地解決問題，換一種思考模式可能會讓難題成功解決。 也可能提醒你面臨難堪的處境時，需要有耐心，做事不可莽撞。而逆位則可能是無償的犧牲，或者是不付出的意思。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>倒吊人</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 死神 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/13死神.webp"
+                alt="死神"
+                data-description='{
+                  "keyword": "結束、轉變、新生、消除、改變、內部的力量",
+                  "upright": "結束，失敗，絕交，難逃劫數，激烈變化，殘局，與過去告別，失戀",
+                  "reversed":"新開始，重新來過，掙脫窘境，煥然一新，改變想法，恢復名譽，戀情柳暗花明",
+                  "meaning": "不管是弱小者的哀求，還是眼前的瘡痍滿目，都不能阻止骷髏騎士執著前行。 國王拒絕死亡，所以被白馬踏過，主教昔日威風凜凜的權杖此時也掉在地上，在死神面前，上帝代言者的身份也不再有效免的特權。 跪在地上的那個女人，曾經是力量牌中無所不能的女子，可是在殘忍的死神面前，她失去了抵抗的力量，只能轉過臉去靜等死神的降臨。 最可憐的是那個無辜的小孩，他還處在對死亡懵懂無知的年齡，正好奇地看著這一切。 然而，他能躲過命運強加給他的災難嗎?沒有任何力量能阻止死者的來臨，就像世間萬物，除了時間，沒有什麽東西能永生不朽。 但這張牌基本沒有肉體死亡的意義，更多的是指稱各種形式的結束，同時這張牌也暗示著結束後的新生。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>死神</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 節制 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/14節制.webp"
+                alt="節制"
+                data-description='{
+                  "keyword": "節制、健康，平衡、結合、欲望、協調、配合",
+                  "upright": "控制，平和，漸入佳境，良好家庭，實際，克制慾望便達成願望，逐漸加深的愛",
+                  "reversed":"失信，浪費，得罪朋友，慾望過多，沒有看清世界險惡，不長進，戀愛時易衝動",
+                  "meaning": "可愛的金發天使，正緩緩將水倒入聖杯中。這兩個聖杯，一個代表「物質」，一個代表「精神」，象徵著每個人都有物質與精神的雙重渴求。 但是一個聖杯都沒有裝滿，這是天使在告誡我們做事和為人需要注意「過猶不及」。 滿則溢，寬則仁，懂得感恩和有分寸感，做人才能從容有度。 不向現實過多的索取，身心才會處於協調、平衡和健康的狀態。節制這張牌的牌義，有點類似二千多年前老子提倡的「無為無不為」，無求無欲才是做火的至境，不貪求不猖狂或許更容易獲得成功。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>節制</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 惡魔 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/15惡魔.webp"
+                alt="惡魔"
+                data-description='{
+                  "keyword": "束縛、無知、物質主義、絕望的、欲望、沈迷",
+                  "upright": "絕望，受阻，歧途，墮落，意志薄弱，沉醉欲望，被欺騙，不能自拔而無望的愛情",
+                  "reversed":"解脫，走出陰霾，離開不潔的朋友，拒絕邪惡，東山再起，自由，愛情有轉機",
+                  "meaning": "魔鬼這張牌，被公認為塔羅牌中的「壞牌」之一。 虎視眈眈的魔鬼，高高在上，注視著滾滾紅塵中為愛情、為金錢利祿所累的紅男綠女，誘惑他們走向靈魂的墮落。 誘惑、沈溺、墮落，是魔鬼牌的主要意義。的確，生活中的誘惑無處不在，關鍵在於你是否能夠抵禦，是否有自律、自愛的生活態度。 鎖鏈隨便掛在情侶的脖頸上，這表明他們是心甘情願地被誘惑;被魔鬼所奴役。 預測時出現這張牌，意味著你現在沈迷於某種壞習慣或惡習中不能自拔，該牌則提醒稱一定要保持自省和自律。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>惡魔</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 高塔 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/16高塔.webp"
+                alt="高塔"
+                data-description='{
+                  "keyword": "劇變，災難、破壞、下落的、釋放的",
+                  "upright": "災難，信念崩潰，毀滅，玩火自焚，危險，名譽受損，意想不到的壞消息，失戀",
+                  "reversed":"事故或麻煩輕鬆地解決，小災難，背黑鍋，留下後遺症，關係即將破裂",
+                  "meaning": "仿佛晴空起霹靂;二個狂妄者突然自高空墜下，那堅固的城堡似乎也搖搖欲墜。 高塔是物質世界的指稱，代表著世俗生活中關於“惡”的方方面面，那有著巨大摧毀力量的雷，則是上天的懲誡。 上天一發怒，人類便顯得渺小。在大阿爾克那牌中，高塔牌也是被人們談論最多的“壞牌”之一，是張有著強烈宗教意味的大牌。 單看圖案，就會給當事人帶來不好的心理影射。但是，我們也應該看到這張牌的積極意義，如果沒有破壞， 哪里會有建設呢?人心的惡見了底，善便會萌生。這是靈魂的自然規律。 被測時出現這張牌，一般是提醒當事人不要耽於享樂注重靈魂的內省。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>高塔</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 星星 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/17星星.webp"
+                alt="星星"
+                data-description='{
+                  "keyword": "希望、慷慨、靈感、平靜、祝福、沒有憂愁",
+                  "upright": "希望，願望達成，生活靜谧而甜美，創造力，水准提高，生活得到滋潤，懷孕",
+                  "reversed":"希望渺茫，事與願違，情況不容樂觀，異想天開，好高騖遠，追求不可得到的愛",
+                  "meaning": "希望之星在蔚藍色的夜空增熠生輝，純潔的女子愛意融融地用水滋潤著大地，生命由此起源，並煥發出放欣欣向榮的生機。 水是生命之源，也是滋潤愛的源泉，是生生不息的生命力的象徵。 夜空中閃耀的星辰，舀水的裸體女子，使人們的靈魂突然變得澄澈、透明，脫去了所有的偽裝， 世間所有美好的事物仿佛一下子來到了他們面前。 星星這張牌與魔鬼牌恰好成為對立的一張牌，魔鬼的誘惑使人走向他的墮落，而星辰的指引卻給人帶來希望， 並最終走向他純凈的生活。 預測時正位的星星牌往往暗示著你正走在希望的路途，它提醒你放下所有的負擔，拋開恐懼和懷疑，勇敢前行， 因為它的前方正是你向往的光明之處。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>星星</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 月亮 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/18月亮.webp"
+                alt="月亮 "
+                data-description='{
+                  "keyword": "恐懼、想象、幻想、困惑、不安、多變、刻板印象",
+                  "upright": "善變，迷惘，不安，謊言，恐懼，背叛，泄密，中傷，曖昧，戀愛時缺乏安全感",
+                  "reversed":"冰釋，反復無常，眼光長遠，除去困難，被揭穿謊言，擺脫不潔的感情歷練",
+                  "meaning": "在塔羅牌中，月亮是一張有著陰柔性質的牌，它善變，偷窺，而且喜歡說謊，在它曖昧的幕布下，誘惑無處不在， 危險亦無處不在。畫面中那輪月亮里有著一張沈思的、類似於女巫的老婦人臉孔，她陰沈地注視著你， 卻並不準備給予你以任何希望，她的注視讓你的靈魂不再平靜，有一股不祥的力量自你內心升起， 讓你不知不覺就會迷失方向。 畫面的下方兩頭狗也感受到了不安，在月下狂吠，就連水里的蠍子也爬上岸來，整個畫面充斥著緊張，曖昧、迷惑、不安的氣氛， 這一切都是月亮惹的禍。在西方文化里月亮象征著魔法。 預測時遇到月亮牌，提醒當事人可能正在迷惘或方向錯誤的路途，應該及時找準方向，認準目標。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>月亮</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 太陽 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/19太陽.webp"
+                alt="太陽"
+                data-description='{
+                  "keyword": "成功、自由、快樂、團體、有生命力",
+                  "upright": "幸福，偉大，成功，結交良友，熱情，充滿活力，積極，愛情得到祝福",
+                  "reversed":"任性，失敗，失業，輕信，孤獨，有麻煩，嫉妒，意志消沉，絕交，戀情告吹",
+                  "meaning": "一個小天使欣喜地來到人間，向人類布施福音。太陽牌表達的是太陽和光明給生命帶來的歡愉。 萬物成長依賴太陽，太陽是生命的源頭，是萬物生長的源泉。圖中的小男孩赤裸著身子，騎著馬，手舞足蹈，無憂無慮充滿了童真，雖然馬上沒有繮繩， 但他仍控制自如，表明他是超自然的精靈，力量無處不在，可以隨心所欲地控制一切。 太陽牌充滿了所有積極正面的力量。 預測時出現太陽牌的正位，提示當事人正走在光明的路途中，前途一帆風順，想要做的事情都會獲得極大成功。 逆位的太陽牌仍然具有正位的意義，只是程度稍弱一些。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>太陽</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 審判 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/20審判.webp"
+                alt="審判"
+                data-description='{
+                  "keyword": "審判、覆活、覺醒、知道結果、心聲、重生、救免",
+                  "upright": "復活，赦免，危機解除，恢復健康，嶄露頭角，獲得榮升，事態明朗",
+                  "reversed":"幻滅，一蹶不振，自欺欺人，曖昧，懦弱，不被接受，戀戀不捨又無法挽回的愛",
+                  "meaning": "審判牌是一張除舊迎新的牌，用「我的結束也即是我的開始」來表述這張牌的牌義再合適不過。 在基督教的觀念中，最終審判之日，善必得報，惡必被懲，這張牌正是顯示了審判之日到來時的情景，極富現場感。 在畫面中我們看到，天使的寬恕讓沈睡的靈魂得以覆活，他們都張開雙手，接受天使的指引。 擁有翅膀的天使在雲端吹奏金色的喇叭，他們從這美妙的福音內懂得只要真誠的懺悔就會獲得新生，只有走正道， 才能迎來美麗新世界。這正是基督教的主管教意。預測中遇到審判牌，是提醒當事人，審判過後，過去糾纏著我們靈魂的不潔事物就離開了我們，新的生活也就開始了。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>審判</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 世界 -->
+            <div class="gallery-item">
+              <img
+                src="./image/大阿卡那(22張)/21世界.webp"
+                alt="世界"
+                data-description='{
+                  "keyword": "融合、開始參與、成就、履行、達成、完美",
+                  "upright": "達成，幸運，光明未來，美好，名譽，國外旅遊，人格高尚，有情人終成眷屬",
+                  "reversed":"未完成，挫折，准備不足，無法履行約定，精神鬆弛，徒勞無功，情感受挫",
+                  "meaning": "「21號」牌是大阿爾克那牌中的最後一張牌。審判結束後，惡已被清算，人心向善，世界趨於和諧、圓滿，從此以後，世間再也不會有輪回，再也不會有苦難，所有美好的願望都已達成，慶祝開始。 月桂中翩翩起舞的女神，表情坦然，神態輕松，暗示所有的還望都已達成。世界牌中世界的含義，是指美好和諧的境界，也指稱世俗的世界變成了靈魂安寧的世界。 我們必須有一顆感恩的心，並全身心地投入，障礙才能消除，才能找到美麗新世界。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>世界</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 可繼續添加更多圖片 -->
+          </div>
+          <!-- 小阿卡那(權杖) -->
+          <h1 class="text-center mb-4 text3 effect03" style="font-weight: bold">
+            小阿卡那
+          </h1>
+          <h3 class="text-center effect03" style="font-weight: bold">
+            權杖系列
+          </h3>
+          <div class="gallery d-flex flex-wrap justify-content-center">
+            <!-- 圖片列表 -->
+            <!-- 權杖一 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/權杖/Wands01.webp"
+                alt="權杖一"
+                data-description='{
+                  "keyword": "創造力、自信、激情、勇氣、靈感行動開始",
+                  "upright": "進攻性，變革與勇氣，重大開端，斷機遇，幸運的出發，分娩男孩，新的戀情",
+                  "reversed": "錯誤的開始，不見曙光，取消，阻礙，身體欠佳，人際關系的煩惱，為感情心疼",
+                  "meaning": "所有的首牌都是一個新的開始。「一」是開端， 也是一切，是所有能量開始的源流。 從雲端里伸出一只強有力的 手，握緊權杖，像是在說:「只要敢於行動，就能獲得成功！‧」 圖案中的權杖代表能量，白色的光芒代表權力的至高無上，遠處的城堡是成功的象征。 權杖首牌，代表一個新計劃或行動的良好開端。預測中出現權杖首牌的定位，暗示著當事人面臨新的機會，只要努力嘗試，大膽行動，就能獲得成功。 而任何形式的放棄或退縮，都是不可取的。逆位的權杖首牌，一般暗殺計劃受阻，各種形式的延誤或阻礙。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>權杖一</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 權杖二 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/權杖/Wands02.webp"
+                alt="權杖二"
+                data-description='{
+                  "keyword": "個人魅力、創新、勇氣、分析、掌握",
+                  "upright": "權力或威力，富裕，處事正確，新生活，獲得成功， 意志堅定，收穫愛情",
+                  "reversed": "麻煩或事故，生病，悲嘆，窮困，行動限制，不理智讓愛情遭遇麻煩",
+                  "meaning": "身穿紅色服裝的男子，俯視著他的疆土，目光所及之處是無邊無際的海洋。 權杖二類似大阿爾克那牌中的魔術師牌，有著超強的自我控制能力和無窮無盡的能量，讚揚的是個體生命的勇氣和偉大，與職術師的天賦能量不太一樣的是，權杖二中的能量有一種侵略、敵對的意味。圖中的人物似是主教身份，穿著的紅色衣服象征著戰鬥的熱情，右邊被鐵環系在墻上的權杖表示擁有勿庸置疑的能力，神秘的水晶球，象征著潛能。 預測時出現權杖二，代表夢想正在一步步通過努力實現，但是也要注意冷靜分析形勢，避免頭腦發熱。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>權杖二</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 權杖三 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/權杖/Wands03.webp"
+                alt="權杖三"
+                data-description='{
+                  "keyword": "探險、領導、遠見、旅行、再出發",
+                  "upright": "領導，成功，知性，貿易順利，協調大吉，婚姻門當戶對，以物質基礎為前提的愛情",
+                  "reversed": "剛愎自用，時運不濟，受損，缺乏遠見，沒有共識，延遲，終止，愛情有麻煩",
+                  "meaning": "成功的商人站在山之巔，看著他的載滿貨物的船只出發遠航。 這幅畫面，像是古代海上絲綢之路的某個情景。海面波瀾不驚，預營商旅之行一帆風順，金黃色的背景象征前景光明。 預測中的權杖三正位，往往暗示投資前景看好，商業夥伴值得信任，以及投資項目可以預知的成功，另外也是對探索精神的一種鼓勵。 在預測感情方面，這張牌往往暗示著雖會成功，但婚姻或愛情受物質的影響較大。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>權杖三</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 權杖四 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/權杖/Wands04.webp"
+                alt="權杖四"
+                data-description='{
+                  "keyword": "歡慶、激情、自由、到達、完成、回家",
+                  "upright": "繁榮，慶賀，積極向上，家庭，自由，穩固，喜慶悠閑，羅曼蒂克",
+                  "reversed": "失去平靜，模糊，薄弱，成功之前的一段小挫折，人際關系差，戀情不夠穩定",
+                  "meaning": "兩名手執鮮花的女子跳著歡快的舞蹈，遠處的幾個孩子也在歡樂地嬉戲，到處是一派和諧繁榮、慶祝豐衣足食的景象。 畫面中，四根高大的權杖有序地樹立在大地上，組成一個門狀圖案，象征著穩定和安全，權杖上纏繞著累累果實的長膝， 象征著繁榮與富裕。 後面規模宏大的城堡，暗示著無憂無慮和安居樂業。權杖四意義明確，給人一種積極向上、其樂融融的生活氣息。 如果說權杖三還有著探索風險的話，那麽權杖四則是探索已經得到收獲的證明。 逆位的權杖四，要視具體推測問題與整體稱陣局勢而定。有時與正位相反，有時則與正位意義相同。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>權杖四</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 權杖五 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/權杖/Wands05.webp"
+                alt="權杖五"
+                data-description='{
+                  "keyword": "爭執，激戰，競爭，衝突，沒有領導",
+                  "upright": "歷盡險阻後的成功，強敵，衝突，鬥志旺盛，難以快擇，與戀人爭吵",
+                  "reversed": "非公平競爭，欺詐，混亂，覆雜，紛爭，可能有訟，與戀人有誤會",
+                  "meaning": "「權杖五是一場模仿的戰役。」的確如此，畫面中的五個男子執權杖持不下，混戰，像是刀光劍影實際上卻並不血腥。 五個男子的裝備都不相上下，穿著式樣類似的衣裝，所以我們可以將此理解為一場勢均力敵、公平的較量。 正位的權杖五大多描述一種競爭狀態，或者種公平競爭，外在的較量和內心的矛盾衝突也是該牌的旨意，與別人抗爭、自我衝突都包含其中。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>權杖五</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 權杖六 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/權杖/Wands06.webp"
+                alt="權杖六"
+                data-description='{
+                  "keyword": "勝利，自豪，稱讚，英雄",
+                  "upright": "自信滿滿，獲得勝利，凱旋而歸，榮譽鮮花，金榜題名，戀愛有結果",
+                  "reversed": "壞消息，恐懼，對手取勝，不誠實交易，進賬較晚，配角，戀愛失敗",
+                  "meaning": "權杖六讓我想起大阿爾克那牌的戰車牌，同戰車牌相比，權杖六中男子的勝利，更具體、更世俗，是生活中強者的絕妙形象。 圖案中的青年男子戴著勝利的桂冠，騎著白馬凱旋而歸，鮮花和掌聲就在他的周圍。 因為贏得了戰爭，他得到了部隊的尊重，他可以回去接受國王的封賞了。 白色的戰馬和身披的綠色絨衣代表力量，紅色的外衣則象征他的熱忱和鬥志。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>權杖六</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 權杖七 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/權杖/Wands07.webp"
+                alt="權杖七 "
+                data-description='{
+                  "keyword": "進取、堅信、挑戰、勇氣、暗敵",
+                  "upright": "有阻礙需努力方能克服，戰勝對手，正義立場，有利，充滿鬥志，爭取愛情",
+                  "reversed": "產生懷疑，被打敗，困惑，無法決斷，懦弱的愛",
+                  "meaning": "進取和開創精神是所有權杖牌的核心，正如權杖七中顯示的那樣，一名綠衣男子站在郁郁蔥蔥的山巔上， 在他面前有六根權杖，象征著他前進的阻力，但男乎毫無懼色，他頭發飛揚，表情堅毅，奮力迎敵。 權杖七中的男子，並不是不講理的莽撞之徒，他像是在主動進攻，其實他更多的是一種防禦姿態，可謂進退有度。 這更顯示了他的理智。正義來臨時，他會勇往直前，遭到敵人進攻，他又毫無懼色。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>權杖七</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 權杖八 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/權杖/Wands08.webp"
+                alt="權杖八 "
+                data-description='{
+                  "keyword": "快速行動、消息、結局、急劇變化",
+                  "upright": "快速行動，果斷決定，馬上行動，一鼓作氣，活潑，一見鐘情",
+                  "reversed": "衝動，欠考慮，爭論，莽撞，家庭不和睦，行動遲疑，一蹶不振，喪失戀愛時機",
+                  "meaning": "權杖八給人一種自由奔放的浪漫氣息。蔚藍的天空下，坡勢平緩，一條河流靜靜地流淌，八根權杖整齊劃一地流擊水。 權杖八是迅速行動的象征，有時也象征迅速地結束。總之，權杖八有著強烈的表演慾，表現和展示自我的心情迫切，動如脫兔， 並且它意味著將要從事的事業成功的速度超出你的想象，贏得勝利的機會很大，如果預測某件事情是否結束，則預示著當事人要快刀斬亂麻。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>權杖八</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 權杖九 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/權杖/Wands09.webp"
+                alt="權杖九 "
+                data-description='{
+                  "keyword": "防禦、毅、堅定、審慎、小心",
+                  "upright": "力量，做好準備，百折不撓，拒絕說「不」，隱藏實力，蓄勢待發，感情升華",
+                  "reversed": "逆境，徒勞無功，不切實際，鬥志衰弱，運氣欠佳，志大才疏，對感情信心不足",
+                  "meaning": "一個疲憊的勇士頭紮帶，像在警惕地等待著什麽，在他身後，八根權杖柵欄一樣環繞著他辛辛苦苦建立起來的家園。 在此之前，勇士已經歷經磨難，他頭上的繃帶就是證明。這正如同我們的生活，很少有人不受到傷害，然而只有經歷過傷害， 我們才能盡快成熟，並應付生活的磨難，也只有經歷過挫折，我們才知道如何從容應對挫折。這正是權杖九的精神內涵。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>權杖九</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 權杖十 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/權杖/Wands10.webp"
+                alt="權杖十 "
+                data-description='{
+                  "keyword": "過分展現、抗爭、忍耐、壓迫、責任過重",
+                  "upright": "成功須得付出代價，信念強烈，有責任感，辛苦付出，情緒不安，苦戀終有成果",
+                  "reversed": "壓力太大，接近崩潰，難以為繼，選擇放棄，不誠實，不自信而放棄感情",
+                  "meaning": "畫面中的男子是現代人生活狀態的絕妙寫真。 我們看到，男子前行步伐堅定，他的肩上雖有千斤重。胸中卻雄心萬丈，他離他的目標已經近了。 權杖十表示我們「沒有人能隨隨便便成功」但同時，我們也應該看到，男子似乎有些不堪重負，既然如此艱難， 為什麽不放下那些負荷歇一歇呢？這正如同我們的生活，成天忙忙碌碌，其實我們所追求的不過是些身外之物，過於看重名利而忽視內心的追求，實在是本末倒置。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>權杖十</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 權杖侍從 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/權杖/Wands11.webp"
+                alt="權杖侍從 "
+                data-description='{
+                  "keyword": "創造性、自信的、熱情的、勇敢的、認真",
+                  "upright": "誠實，好消息，新開始，優秀助手，天真，誠實，活潑可愛，盲目的愛或姐弟戀",
+                  "reversed": "壞消息，搬弄是非，不安定，幼稚，困惑，令人擔憂，思考和決斷能力差",
+                  "meaning": "權杖侍從穿著金色的衣服，象征他家境良好，有優越的出路。 他就像一個小淘氣鬼，有點兒像大阿爾克那牌的愚人牌，熱情活潑，喜歡出風頭，無拘無束，就算是自己的缺點也想成為別人注目的焦點。 幼稚的特從有著強烈的表演慾，他是個有魅力的男孩，他的純潔是顯而易見的，他的魅力正是來自於他的糊塗和天真。 生活中的他受到別人的原諒和寵愛，很容易吸引年輕女孩的目光。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>權杖侍從</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 權杖騎士 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/權杖/Wands12.webp"
+                alt="權杖騎士 "
+                data-description='{
+                  "keyword": "富有魅力，淺簿，愛冒險，自信，熱情",
+                  "upright": "冒險也點兒冒失，幸運，魅力，晉升，熱情自信，事業順利，脾氣差，受女孩青睞",
+                  "reversed": "措手不及，進展中斷，事業方面潛在的挫折，淺薄分歧，分居或感情破裂",
+                  "meaning": "權杖騎士像極了將風車當作惡魔的堂吉訶德。 他勇於進取，但他看得見的敵人實際上並不存在。 如果沒有敵人，他就會同假想敵戰爭，他的理想就是要維護正義，除暴安良，無論是虛幻還是在現實生活中，戰爭都是他生活中的主要內容。 其實這正是權杖騎士的可貴之處，他的勇氣和熱情常令人嘆服，如果身處亂世，沒準真能做出驚天動地的大事業呢！同時，我們也應該注意到，權杖騎士並不是將軍，所以有時候會莽撞沖動，脾氣也不太好。預測中遇到權杖騎士時，要客觀地看待這張牌，一方面它肯定了當事人的冒險精神和勇氣，一方面也提醒當事人要理智和冷靜地為人處事。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>權杖騎士</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 權杖皇后 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/權杖/Wands13.webp"
+                alt="權杖皇后 "
+                data-description='{
+                  "keyword": "有魅力的、愉悅、專一、自信、開朗、熱心",
+                  "upright": "值得信賴，熱情溫暖，魅力，決心和能力，優雅獨立，有控制力，成熟的婚戀",
+                  "reversed": "情緒化，刻板，嫉妒，專橫，傲慢，妨礙發展，戀愛時讓對方無所適從",
+                  "meaning": "權杖皇后尊貴典雅，容光煥發，公正沉穩，天生具有幽默的才華，同時不乏勇氣以及和藹可親的風度，這使得她總是能給人帶來溫暖與活力， 但同時，高高在上的她由於過於獨立的處世風格，以及處處好強的舉止，使得她在人群中曲高和寡，特別是在權衡感情問題時拿捏得有些過度，控制慾又太強，因此有時會讓人覺得可敬但不可親。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>權杖皇后</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 權杖國王 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/權杖/Wands14.webp"
+                alt="權杖國王 "
+                data-description='{
+                  "keyword": "創造性，鼓舞，勇敢，有能力",
+                  "upright": "穩重，堅強，有教養，知識型，好父親，誠實，給愛人安全感但控制欲強烈",
+                  "reversed": "太過嚴格，苛求，獨斷專行，態度傲慢，愛面子，計劃延期，愛人有點怕你",
+                  "meaning": "對於權杖國王來說，權力、疆土和臣民就是他的全部，終其一生，他都在琢磨如何建設他的江山社稷。 他有能力做到這些，畫面中的國王似乎隨時準備從座位上站起來，這說明他富於強勁的行動力，同時，國王行事決斷，智勇超群，同時穩重而寬宏大度，這使得他從事的事業無往不利。 預測感情時，國王牌象征責任和安全感，有時也是感情冷漠的象征。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>權杖國王</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 可繼續添加更多圖片 -->
+          </div>
+          <!-- 小阿卡那(聖杯) -->
+          <h3 class="text-center effect03" style="font-weight: bold">
+            聖杯系列
+          </h3>
+          <div class="gallery d-flex flex-wrap justify-content-center">
+            <!-- 圖片列表 -->
+            <!-- 聖杯一 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/聖杯/Cups01.webp"
+                alt="聖杯一"
+                data-description='{
+                  "keyword": "情感作用、親密、直覺、愛、情感付出",
+                  "upright": "大膽追求，收成順利，幸福感，愛苗萌芽，親密，真覺，愛，情感付出",
+                  "reversed": "虛偽，缺乏愛意，前途不明的一段感情，喜悅中有隱憂，不開心，失望，單戀",
+                  "meaning": "聖杯，原指基督在最後的晚餐時用過的杯器，基督被釘死在十字架後，聖杯也被用來盛裝基督之血， 所以聖杯是神聖的，即人類的感情和靈魂同樣也是神聖的，沒有什麽比靈魂的覺醒更重要。 聖杯首牌，往往象征一段新感情或新友誼的開始，一切都是那麽美好、溫暖，充滿希望。，圖案中的一只白鴿是天主教中聖靈的象征， 它嘴里銜著的，是耶酥身體化成的聖餅，杯中溢出的五道水柱代表人類的五種器官， 睡蓮象征著人類靈魂的覺醒。預測時，若當事人問的問題不指涉感情，聖杯首牌則提醒當事人， 解決問題時就應該進行適當的感情投資。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>聖杯一</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 聖杯二 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/聖杯/Cups02.webp"
+                alt="聖杯二"
+                data-description='{
+                  "keyword": "發生關系、吸引力、尋求信任、真愛、平等",
+                  "upright": "溫情脈脈，美好友誼，周圍有人結婚，和睦，心心相印的戀人",
+                  "reversed": "爭吵與誤會，猜忌，嫉妒，對立，離婚，虛情假意",
+                  "meaning": "頭戴花環的一對男女手執聖杯，深情地注視著對方。 圖案中端莊的淑女是陰性的象征，而男人身體前傾，相對主動，是陽性的象征，整個畫面有點兒「鳳求凰」的意思。 初看這張牌，很容易讓人想起大阿爾克那牌中的情侶牌，區別在於情侶牌彌漫著強烈的性和欲望的氣氛， 而聖杯二則類似於初戀，男女雙方只是情感上的交流，觸電的感覺開始環繞著他們， 是一種溫情脈脈的感情傾向。如果預測時涉及感情問題，該牌則提醒當事人，注重與周圍的人進行交流，溝通和友好合作。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>聖杯二</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 聖杯三 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/聖杯/Cups03.webp"
+                alt="聖杯三"
+                data-description='{
+                  "keyword": "喜悅、一同慶祝、豐收、感受繁榮、團體、友誼",
+                  "upright": "合作，需做決定，值得慶賀，和解，友誼，痊癒，婚姻幸福，戀人和解",
+                  "reversed": "不可親近，淫蕩，過度，樂極生悲，暴飲暴食，延遲，戀人心生厭倦",
+                  "meaning": "三個頭戴花環的女子，圍成圓圈，高舉聖杯，整個畫面洋溢著豐收節慶的氣氛。 三個女子衣著各異但裝束類同，頭發的顏色也不一樣，但神情喜悅自足， 表示她們之間是平等關系，讓人想起世界原來可以如此美妙和諧， 原來我們生活的地方是這樣充滿了希望。 聖杯三大多指涉以感情相關聯的團體，比如同學、家族或家族企業。 聖杯三指涉歡慶的意思也很濃厚，諸如婚禮、喜宴、以感情為單位的集會等等。 預測時的聖杯三，表示當事人所問之事一定要摒棄私心，只有真誠合作才能雙贏， 另外，聖杯三在強調友誼和團結的同時，有時也暗含有競爭和相持不下的意思。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>聖杯三</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 聖杯四 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/聖杯/Cups04.webp"
+                alt="聖杯四"
+                data-description='{
+                  "keyword": "自我、沉思、冷漠、選擇、觀望、不滿足",
+                  "upright": "喪失機會，缺少信心，拒絕，冷漠，厭倦，身心俱疲，失去戀愛機會或外遇",
+                  "reversed": "新的人際關系，活力，新機會，脫離低潮期，新的戀情",
+                  "meaning": "聖杯四圖中的男子端坐樹下，有點打不起精神，他緊閉雙眼，百無聊賴，雲層中的那只手主動友好地伸出聖杯， 他卻無動於衷，甚至連面前的三個聖杯他也視而不見。 一般來說，前方的三只聖杯象征過去的經驗，而雲中的那只聖杯象征著的希望，可能是過去的經驗讓他覺得前途無望，或者 他沉迷於過去的傷心往事，所以對新的希望也采取不信任的態度。 對他來說，生活是沉重的負擔，因為受傷導致很戒備，所以他努力讓自己對生活漠不關心。 預測時，聖杯四有時也代表外遇和新機會的降臨，或者暗示新機會來臨前的一種權衡。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>聖杯四</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 聖杯五 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/聖杯/Cups05.webp"
+                alt="聖杯五"
+                data-description='{
+                  "keyword": "虧損，遺憾，死亡，失望，悲觀，原地踏步",
+                  "upright": "後悔，沉淪，痛苦，懷疑，有缺憾，無意義的交際，幻滅感，新生活的可能性，愛情受挫",
+                  "reversed": "老朋友回來了，東山再起，重現美好，重拾信心，舊情復熾，新的戀情",
+                  "meaning": "聖杯四表現的是冷漠和厭倦，聖杯五所表現的情緒比前者更強烈，代表絕望和悲傷。 這兩張牌的出現都表示著人生可能正處於低潮期。 畫面被灰暗的天空所籠罩，一個男子身著黑色斗篷深埋腦袋， 痛苦無以傾訴，內心的沮喪無以覆加。 男人面前的三隻聖杯傾倒，但是在他的後面有兩隻立著的聖杯，可是他只是沉浸於自己的內心世界， 對生活的絕望讓他的思維走入了死胡同，他一點兒回頭的想法也沒有。 如果我們再仔細觀察就會發現，他只要穿過河流上的那座白色小橋， 就可以抵達城堡，那兒是他靈魂的歸依之所，會讓他重新過上安寧快樂的生活。 所以預測時出現聖杯五，即代表悲傷痛苦的處境的同時，也暗示著只要行動起來，就可能走上生活的坦途。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>聖杯五</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 聖杯六 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/聖杯/Cups06.webp"
+                alt="聖杯六"
+                data-description='{
+                  "keyword": "善意、回憶、孩提、清白、濃靠、安全、穩定",
+                  "upright": "愉快記憶，溫暖，陷入回憶，再會，兒時體驗， 回憶，鄉愁，舊情難忘",
+                  "reversed": "好運降密，關心未來，告別過去，高瞻遠矚，沒有安全感，新的戀情",
+                  "meaning": "兩小無猜的小孩讓我們想起童年在故鄉「過家家」的情景。 聖杯里裝滿了鮮花，美麗如畫的田園風光，聖杯六童話般的色彩勾起我們強烈的鄉愁情緒，那兒是我們的根，牽扯著我們的腳步。 回憶和鄉愁正是聖杯六的主要牌義，代表與過去相關的人與物，代表著濃濃的鄉愁和揮之不去的懷舊情結。 圖畫中小男孩小女孩獻花的細節，是慷慨饋贈的表示，告誡我們給乎和真誠才能增進友誼。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>聖杯六</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 聖杯七 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/聖杯/Cups07.webp"
+                alt="聖杯七 "
+                data-description='{
+                  "keyword": "幻想、浪費、選擇、夢想、欲望",
+                  "upright": "面臨選擇，缺乏實際行動，白日夢，反覆，慾望太多，欺詐，不潔或一廂情願的戀愛",
+                  "reversed": "下定決心，明智選擇，近期達成目標，堅強意志， 愛苦盡甘來",
+                  "meaning": "美好的事物浮在雲端之上，畫中人雖然只有黑色的背影， 但是他的貪婪顯而易見，他的恐懼同樣顯而易見。 聖杯七的主要牌意是欲望和奢求，對得不到的事物的一種強烈渴求， 換句話說就是不切實際，幻想，做白日夢。聖杯七的引申意義是選擇，就像畫中的男人一樣，面對七隻聖杯，每一隻都充滿了誘惑， 可是他到底該做出什麽選擇呢？另一種引申義是不潔、頹廢的生活。 預測時遇到聖杯七，則可能是提醒當事人應該注意生活的基本邏輯，付出實際行動，且不可做思想的巨人，行動的矮子。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>聖杯七</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 聖杯八 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/聖杯/Cups08.webp"
+                alt="聖杯八 "
+                data-description='{
+                  "keyword": "厭倦、內涵、繼續、追尋、安寧",
+                  "upright": "十字路口，疑心病，半途而廢，衰弱，停止努力，愛情冷卻或已趨理智",
+                  "reversed": "喜慶，圓滿，轉機，努力或奮爭，接到邀請，新的戀情",
+                  "meaning": "在一個月明之底，一個紅衣男子柱杖離開原來屬於他的八隻聖杯，踏上未知的旅程。 從圖案中可以看出，紅衣男子在清理自己的聖杯時，發現中間需要多一隻聖杯才能填滿那個缺口， 他需要去尋找另外一隻聖杯，這正是他轉身離開的理由。 由此可見，紅衣男子是一個完美主義者， 哪怕一點兒缺陷也會讓他覺得遺憾。他是否會因此走上不歸路呢？ 不得而知。從他佝僂的背影和沉重的步履也可以看出，他有很重的疑心病。 在他的左邊，沼澤密布，是情感滯塞的象征。 聖杯八牌義相對繁覆，旨意為「拋棄」，但有時也象征身處逆境時富有勇氣的追求。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>聖杯八</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 聖杯九 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/聖杯/Cups09.webp"
+                alt="聖杯九 "
+                data-description='{
+                  "keyword": "實現理想、感官愉悅，滿足、願望達成",
+                  "upright": "富足，幸福感，形勢有利，獲得成功，自得其樂的愛情",
+                  "reversed": "物質受損，犯錯誤，內心不滿，不節制，虎頭蛇尾，愛情出現危機",
+                  "meaning": "聖杯八中的那位男子艱難的探索終於有所收獲，他現在找到了他想要的生活， 身後的九隻聖松整齊地擺在他的身後，男子安康、富足、心情愉悅又怡然自得。 聖杯九的主要牌義是「願望」的達成，不單指哪一方面的滿足，包括視覺、味覺，觸覺上的各種享受和滿足。 預測時出現聖杯九的正位，則是提醒，當事人注意找尋自己的夢想，並努力追求，就一定會達成願望，得到想要的一切物質或精神上的東西。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>聖杯九</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 聖杯十 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/聖杯/Cups10.webp"
+                alt="聖杯十 "
+                data-description='{
+                  "keyword": "歡樂、家庭、和平、幸福、家人",
+                  "upright": "內心平和，情緒良好，平淡，知足，和解，家庭美落，愛情甜蜜",
+                  "reversed": "不安全感，失去友誼，家庭暴力，對立的人際關系，與戀人關系緊張",
+                  "meaning": "夫妻相擁，兒女嬉戲，背景是青翠的河流和一棟房屋，可以看出，這是和諧、美滿、其樂融融的一家人。 聖杯二中的一對戀人走過了風風雨雨終於見到彩虹，結合在一起，建立了溫馨的家庭，生兒育女。 十隻聖杯在天空組成一道燦爛的彩虹，象征著情感在生活中的價值，並告訴我們，以心待人真誠付出才能找到快樂的真諦。 另外，聖杯十也暗示著「簡單生活」的奧秘， 聖杯七中的聖杯是承載欲望的器皿，而聖杯十的聖杯則回到了它的原本狀態，告訴我們拋棄虛妄，以一顆平常心去生活才能找到真正的幸福。 如推測愛情，聖杯十正位可能表示當事人和戀人即將步入婚姻的殿堂，若推測人際關系方面的問題，則表示合作、和解之日即將到來。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>聖杯十</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 聖杯侍從 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/聖杯/Cups11.webp"
+                alt="聖杯侍從 "
+                data-description='{
+                  "keyword": "情緒，親密，直覺，愛，柔弱，情竇初開 ",
+                  "upright": "孩子氣，冥想，辛苦努力，溫暖，身邊有熱心人，敏感，好消息，情竇初開",
+                  "reversed": "心靈手巧，謙卑，不悅，恃寵而驕，脫離控制，愛情需小心呵護",
+                  "meaning": "畫面中的少年白皙柔弱，是一個正在成長的少年。他多愁善感，富有愛心，情竇初開，因為過度敏感所以極易受到傷害。 他非常孩子氣，不太會掩飾自己的情緒，得到別人的讚揚時，他會覺得他是世界上最幸福的人， 當別人一句不經心的玩笑話觸及到他時，他就會思前想後，甚至傷感得覺得自己是一葉大海中無助的孤舟。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>聖杯侍從</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 聖杯騎士 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/聖杯/Cups12.webp"
+                alt="聖杯騎士 "
+                data-description='{
+                  "keyword": "浪漫，優雅，做作，想象，反省，內心，敏感",
+                  "upright": "浪漫，新機會，生活起變化，做作，誘惑，情緒化，熱戀或愛情帶來的歡樂",
+                  "reversed": "平靜中有危機，欺詐，放蕩，行為不端，因愛生病，容易有三角戀",
+                  "meaning": "聖杯騎士是「愛情的人」。在78張塔羅牌中，聖杯騎士最適合充當愛情的代言者了。 當騎士墜入情網時，沒有人比他更富激情，更浪漫，在追求愛情時，沒有人比他的花樣更多， 他與他的愛不可分離。但是我們切不可就此將聖杯騎士理解為「花花公子」，事實上， 聖杯騎士的愛情沒有摻雜雜質，他對家庭也非常忠誠。在預測不關乎愛情的問題時，聖杯騎士的正位往往代表直覺和創意 。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>聖杯騎士</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 聖杯皇后 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/聖杯/Cups13.webp"
+                alt="聖杯皇后 "
+                data-description='{
+                  "keyword": "愛意的，善良的，直覺的，溫柔的，傾聽的",
+                  "upright": "情感豐富，多愁善感，仁慈，成功在即，善良，公平， 戀愛進行時",
+                  "reversed": "多疑，是好朋友，壞性情造成困難，品行不良， 猜忌的愛人",
+                  "meaning": "聖杯皇后是一個非常感性的女人，月亮的陰晴圓缺，大自然的草木榮枯、花開花落，愛人的一聲一笑全能撥動她敏感的心弦。 「一個女人如果沒有愛情，她的生命其實已經結束了」，這句話用在聖杯皇后身上再合適不過了， 愛情就是聖杯皇后生活中的糧食，他對感情的需要超過對世上所有金銀珠寶的需要。 皇后也是一個美麗、善良、公正且富有魅力的成熟女人，是個標準的好媽媽、好大姐，她的風度讓年輕人很癡迷， 容易有「姐弟戀」產生。預測不關於愛情的問題時出現聖杯皇后牌，則暗示當事人需要遵循直覺處理問題， 用善意、寬容去化解矛盾。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>聖杯皇后</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 聖杯國王 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/聖杯/Cups14.webp"
+                alt="聖杯國王 "
+                data-description='{
+                  "keyword": "明智，人道，平靜，寬恕，圓滑老練，慈祥",
+                  "upright": "好父親，見多識廣，受人尊敬，專家，有作為，有創造性，理想愛人",
+                  "reversed": "表里不一，招人厭惡，欠缺道德感，追逐名利，損失，可能有婚外情或三角戀",
+                  "meaning": "聖杯國王是典型的慈父。作為「國王」，他的王國就是他的家庭、他的愛人和他的餐桌。 他溫厚仁慈，但作為自己世界的主人，他也不乏手腕，頭腦清晰，做事理智周全，有長遠眼光。 在對待感情方面，他是一個負責任的男人，他的溫柔會讓他的女人如沐春風，如飲甘醇。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>聖杯國王</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 可繼續添加更多圖片 -->
+          </div>
+          <!-- 小阿卡那(寶劍) -->
+          <h3 class="text-center effect03" style="font-weight: bold">
+            寶劍系列
+          </h3>
+          <div class="gallery d-flex flex-wrap justify-content-center">
+            <!-- 圖片列表 -->
+            <!-- 寶劍一 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/寶劍/Swords01.webp"
+                alt="寶劍一"
+                data-description='{
+                  "keyword": "智力、公正、堅忍、真相、思想、理智、唯一的",
+                  "upright": "進取，強而有力的新開始，正視困難，承擔責任，逢兇化吉，征服戀人",
+                  "reversed": "破壞，強敵，麻煩，爭端，障礙重重，因逞強導致災難，吵吵鬧鬧的戀人",
+                  "meaning": "劍已出鞘，寒氣逼人，至於未來究竟會怎樣，只有劍本身知道。 群山綿延起伏，天空萬里無雲，從雲端里伸出一雙大手，有力地握住寶劍，寶劍有力地刺穿皇冠和桂冠， 劍的這種挑戰權威的氣勢令人震撼。預測時出現寶劍首牌正位，只是說明事情或行動已經開始， 說明當事人充滿信心，富有勇氣，並無好壞之分，至於它會帶來愛還是滋生恨，是成功的開始還是失敗的源頭，無法預測。 如何趨吉避兇，抵達理想的彼岸，持劍人應好好衡量，謹慎行事。 另外，因寶劍與風元素相關聯，所以寶劍首牌也有智性、正義、知識等相關意思。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>寶劍一</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 寶劍二 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/寶劍/Swords02.webp"
+                alt="寶劍二"
+                data-description='{
+                  "keyword": "壓抑、僵局、避免、執著、內心衝突",
+                  "upright": "專一，暫時的和平，意志堅定，逃避現實，處境尷尷尬、大衝突，封閉的戀人",
+                  "reversed": "打破僵局，結束緊張，雙重人格，損人利己，口是心非的戀人",
+                  "meaning": "身穿淺灰色長袍的女人眼睛蒙著白布，坐在石凳上，雙手交叉持劍，做出一副防禦的姿態。 可以看出，女子有一顆封閉的心靈，外表貌似平靜，其實內心矛盾重。 蒙在女人眼睛上的白布象征著對現實的逃避，背後起伏的海浪呈現出她內心的真實狀況。 寶劍二的出現，意味著當事人面臨決定時，遲遲下不了決心，或者拒絕下決定。 寶劍二同時提醒當事人不要逃避，要直視真相，其實事情遠沒有想的那麽糟糕，乾脆地處理掉糾纏不休的問題，才可以輕鬆上路。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>寶劍二</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 寶劍三 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/寶劍/Swords03.webp"
+                alt="寶劍三"
+                data-description='{
+                  "keyword": "悲傷、辜負、寂寞、難過的回憶",
+                  "upright": "悲傷，爭執，心碎，失去關懷，對立，離散，分居，流淚，傷心的戀人",
+                  "reversed": "自閉，大損失，不安全感，混亂，放不開，愛恨交加的戀人",
+                  "meaning": "寶劍三是一張以「悲傷」聞名的牌。 天空灰暗， 狂風大作，雨點迅猛，三把寶劍合力刺穿一顆心，畫面顯得非常殘忍。 這副畫面形象地呈現出了心碎的模樣。寶劍三出現時，往往象征當事人在情感上受到比較嚴重的刺激。 或許是三角戀，或許被戀人拋棄，或許是被閒言閒語所中傷，或許被朋友欺騙等等。 但是，我們也應該在另一角度看待這張牌，每個人在成長的過程中都會遭遇這樣或那樣的傷害，只要正確對待， 將傷害當作經驗，以一顆平常心去正確對待，就沒有過不去的路，就沒有翻不過的牆。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>寶劍三</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 寶劍四 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/寶劍/Swords04.webp"
+                alt="寶劍四"
+                data-description='{
+                  "keyword": "休息、預備、沉思、放下心中的煩惱",
+                  "upright": "韜光養晦，以退為進，暫時讓步，休養，迷惑，外冷內熱的戀人",
+                  "reversed": "大損失，無法預測，被打敗，暫時休憩，不甘心，令人同情的戀人",
+                  "meaning": "一個年輕的劍客，躺在墊子上休息，表情非常平靜，似睡未睡，他的頭頂懸著三支寶劍，劍客的身上還穿著鎧甲， 床榻上放著一支寶劍，說明他很警覺，暗示只要稍有動靜，他就能一躍而起，拿起寶劍參加戰鬥。 寶劍四的出現一般暗示當事人處於暫時休息狀態，或有點消極的傾向，但目前這種狀況是暫時的， 當事人一刻也沒放棄尋求東山再起的機會。 當預測下一步的重大行動時，這張牌往往有韜光養晦的意思。 此外，這張牌也提醒當事人注意總結教訓和汲取經驗。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>寶劍四</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 寶劍五 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/寶劍/Swords05.webp"
+                alt="寶劍五"
+                data-description='{
+                  "keyword": "自私、不和、紛爭、暫時的勝利、惡化",
+                  "upright": "暫時的勝利，破壞，辭職或免職，墜落，損人利己，罵人，短視的戀人",
+                  "reversed": "停止無謂的爭執，無法預測，被打敗，不甘心，落魂的戀人",
+                  "meaning": "戰勝者收獲了戰利品，看著手下敗將離去的身影，嘴角露出冷笑。 這是爭鬥、爭執或戰爭的一幅模擬圖，勝利者站沾自喜，失敗者垂頭喪氣。「君子坦蕩蕩，小人常戚戚」， 寶劍五中的勝利更多的是小人得志的意思，他的勝利只是暫時的，在道義上他卻是一個徹底的失敗者， 所以說，他的這場勝利毫無意義，雖可以滿足他的虛榮心，但除了培養他的野心和自私， 他從這場勝利中幾乎一無所獲。寶劍提醒當事人要公平競爭，靠不正當手段得來的勝利只會使自己聲名狼藉。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>寶劍五</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 寶劍六 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/寶劍/Swords06.webp"
+                alt="寶劍六"
+                data-description='{
+                  "keyword": "憂鬱、恢復、平靜、帶著問題前行",
+                  "upright": "前路艱難，問題很多，少外援，柳暗花明，跋涉的戀人",
+                  "reversed": "柳暗花明，與世隔絕或接受幫助，度過難關，愛的告白",
+                  "meaning": "撐船的船夫和他的妻女，障礙重重卻在奮力前進。 寶劍六是艱難生活中的跋涉，是不屈的抗爭，是忍辱負重，帶著危險的前行。 船的一邊波濤洶湧，船的前方卻風平浪靜，岸已經離他們不遠了。 船夫手執黑色的長篙，象征著潛力。 寶劍六的出現，暗示當事人目前的處境或遭遇的事情不算太壞，但也不是很好，退卻是不可取的， 只要努力就會看到希望。 寶劍六的另外一個意思是旅行，特別是與水有關的旅行。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>寶劍六</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 寶劍七 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/寶劍/Swords07.webp"
+                alt="寶劍七 "
+                data-description='{
+                  "keyword": "逃避、不光彩、獨來獨去、突發奇想，與眾不同",
+                  "upright": "計劃失敗，不光彩，疏忽大意，泄漏秘密，欺騙，失竊，不光彩的戀情",
+                  "reversed": "意想不到的好運，參考意見，好的忠告，局勢有利",
+                  "meaning": "一個男人溜進軍營偷劍，因得手而竊喜。 但是我們看到，男人只偷了五把劍，另外二把劍留在了原地。這說明他雖然削弱了對手的方量， 但卻給對手留下了反擊的機會。 因為擔心敵人的報復，男人今後的生活會都會在提心吊膽中度過。 寶劍七通常象征欺騙、狡猾、背叛和不光彩的行為。 寶劍七的出現，暗示當事人要光明正大地行事做人。 切不可行雞鳴狗盜之事，一些不為人道的卑劣行為，也許會偶爾得手，但終究會被別人識穿。 寶劍七還代表謊言、謠言，背地里的小動作和造謠中傷。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>寶劍七</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 寶劍八 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/寶劍/Swords08.webp"
+                alt="寶劍八 "
+                data-description='{
+                  "keyword": "約束、無能、混亂、限制、停止",
+                  "upright": "孤立，危機，沉淪，壞消息，被中傷，被束縛，爭執",
+                  "reversed": "掙脫束縛，獲得自由，危機解決，生活重新開始，重新，離開",
+                  "meaning": "寶劍八中的女人被緊縛雙手，蒙著眼睛，被劍陣所困，腳下的泥濘象征著她正受到羞辱， 沒有人來幫助這個無助的女人，寶劍八是進退兩難或孤苦無援的象征，是對一種生活狀態或心靈狀態的表述。 但必須理解，女子所處是困境而遠非絕境，所以此牌並無惡意，更非詛咒。 應該注意的是，寶劍八中的女子之所以落到如此境地，不僅僅是外在的環境所致，更多的還是她自己走不出心靈的誤區， 畫地為牢。有點類似大阿爾克那牌魔鬼牌中的一對男女，雖然可以自己解除鎖鏈，但仍然執迷不悟。 女子的背後是城堡，城堡是希望的召喚，是衝破險阻後自由的家園。 當事人遇到寶劍八時，不應該只專注於它的消極意義，更多的可能是提醒當事人應該衝破困境，勇敢積極地面對生活。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>寶劍八</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 寶劍九 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/寶劍/Swords09.webp"
+                alt="寶劍九 "
+                data-description='{
+                  "keyword": "焦慮、苦惱、內疚，擔心，夢魔",
+                  "upright": "絕望，夢魔，苦難，內疚，流產，絕交，生病，因戀人引起的不幸",
+                  "reversed": "疑感，恥辱，擁有許多秘密的人，猶豫不決，恐怖，謠言，中傷",
+                  "meaning": "坐在床上的男子掩著臉，被子拖到了地上，顯得痛苦不堪。 寶劍九中幕布一樣的黑色背景，讓人倍感壓抑。夜已深沉，畫面中的男子像是被噩夢驚醒，所以起身而坐，這時他突然驚異地發現夢境與現實其實並無差別， 他無法擺脫內心的恐懼。寶劍九形象地表達了人類最深的恐懼，最讓人同情的追悔和最難以擺脫的苦痛。 寶劍九和寶劍三在表達心靈創痛方面比較相似，但比較而言，寶劍九更多的是指當事人內心的煎熬， 而寶劍三則更多指的是人際關系所帶來的煩惱和傷痛。 預測時出現寶劍九，預示著當事人可能會遭遇麻煩，或正遭受著身心折磨，是否能擺脫，還看當事人是否有勇氣正視現實。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>寶劍九</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 寶劍十 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/寶劍/Swords10.webp"
+                alt="寶劍十 "
+                data-description='{
+                  "keyword": "最低點、殉難、犧牲精神、結束、極端、危險",
+                  "upright": "犧牲精神，破滅，希望全無，危險，惡運，消極，感情找不到出路",
+                  "reversed": "突然轉變的命運，有轉機，困窘局面的改善，戀情有轉機",
+                  "meaning": "一名男子俯臥在地上，後背插了十把寶劍，其中一把劍是從耳朵插進去的，其狀慘不忍睹。 一看就知道，寶劍十是張「壞牌」。寶劍九是指內心煎熬的最強烈程度，寶劍十的傷害則大多來自於外界， 泛指一切過度的行為所造成的程度極深的惡果。如同這張牌畫面所闡釋的，一劍足可致命，何須十把劍？ 出現寶劍十，則可能暗示當事人在生活中倍受傷害，遭到突如其來的打擊，夢想徹底破滅等等不好的消息， 有很多塔羅師經常將寶劍十與死亡、噩耗等聯系起來，其實寶劍十與大阿爾克那牌中的死神牌一樣， 極少有象征肉體死亡的意思。不能忽視的是，這張牌也有積極的一面，畫面上方黑色的天空露出的魚肚白和黃色的光芒， 暗示曙光即將來臨，告訴當事人要善於從失敗中汲取教訓，學會在痛苦中堅持，在失敗中成長，只有遭遇大挫折才能有大成就。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>寶劍十</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 寶劍侍從 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/寶劍/Swords11.webp"
+                alt="寶劍侍從 "
+                data-description='{
+                  "keyword": "思維、公正、誠實、毅力 ",
+                  "upright": "邏輯性強，機警，小心，學習，分析，覺察，沉穩，理性戀人",
+                  "reversed": "沒有預見性，缺少準備，漏洞，對手強大，生病，無法控制感情進展",
+                  "meaning": "追風少年雙手握劍，表情堅定，在他的背後晴空萬里，祥雲朵朵，整個畫面昂揚向上。 寶劍侍從是個「問題少年」，不過，這僅指他的好奇心而言，在品德方面，男孩是值得信任的。 凡事他都喜歡問為什麽，屬於尋根究底的類型。他聰明，悟性好，和其它三組的侍從牌比較，寶劍侍從是個心事頗重的男孩， 做事較穩重，偏重理性，善於分析和思考問題。 出現寶劍侍從，可能暗示當事人可以找到解決問題的辦法，或暗示當事人處事需穩重，不要傳播謠言， 也可能指當事人會受到別人的誹謗，具體情況，要按具體問題和該牌在牌陣中的位置而決定。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>寶劍侍從</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 寶劍騎士 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/寶劍/Swords12.webp"
+                alt="寶劍騎士 "
+                data-description='{
+                  "keyword": "直接、知識淵博，權威，傲慢",
+                  "upright": "坦率，挑戰，勇氣，一往無前，強力反彈，無情的感人",
+                  "reversed": "輕率，自負，輕狂，受情緒支配，關系不和，矛盾的戀人",
+                  "meaning": "騎士手揮寶劍奮勇向前，疾風趕不上他的速度， 烈火羨慕他的熱情。 騎士絕對是個莽撞少年，他追求自由，勇氣可嘉，但也經常好心辦壞事，有時還愛說話。 他雖然缺乏理性，卻精明能幹，特別善於辭令。 預測感情時出現寶劍騎士，可能暗示當事人談戀愛時有些心不在焉，但是對對方仍然有強烈的吸引力， 但是彼此可能並不太適合，建立長期關系不太現實。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>寶劍騎士</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 寶劍皇后 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/寶劍/Swords13.webp"
+                alt="寶劍皇后 "
+                data-description='{
+                  "keyword": "誠實、機智、機敏、經驗豐富、坦白",
+                  "upright": "如意時孤獨，失意時有補償，潔癖，過火，失落感，離別，分手",
+                  "reversed": "固執，盛氣淩人，對手頑固，不公平，氣勢過於旺盛，必有惡意，單身",
+                  "meaning": "寶劍皇后端坐於寶座，氣定神閑，一副胸有成竹洞若觀火的樣子。 寶劍皇后是智慧、寬容的象征，她博學多才，是標準的職場女人。 她幾乎通曉一切，特別善於與人溝通。因為她無所不能，辦事精明和個性鮮明，經濟和生活方式都非常獨立， 所以能吸引一大批男人拜倒在她的石榴裙下。 但是她往往看不起生活中小情小調的「小男人」們，不僅如此，對任何男人她都有強烈的控制欲， 加上對感情並非特別在意，所以最後的戀愛結局總是與她想要的結果相距甚遠，甚至會單身或陷入孤獨的境地。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>寶劍皇后</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 寶劍國王 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/寶劍/Swords14.webp"
+                alt="寶劍國王 "
+                data-description='{
+                  "keyword": "嚴肅、聰明、公正、分析、倫理、清晰明確",
+                  "upright": "權威性，倫理，在某領域內的領袖，冷靜，想象力，愛情健將",
+                  "reversed": "殘酷自私，衝突，遭惡意打擊，躁動，朝三暮四",
+                  "meaning": "寶劍國王正襟危坐，手執寶劍，劍鋒斜指蒼天，即使風雲變幻，也毫無懼色。 寶劍國王天生具有領導才能，是他所從事的領域中的專業人才。他做事公正，善於調解糾紛，值得信賴。 與大阿爾克那牌中的正義牌相比，寶劍國王其實是世俗生活中精明的角色，他言辭老練，在正義的外表下，手段圓滑， 有著強烈的控制局勢的手腕。在預測感情時，該牌也象征著當事人雖然與對方有距離，但不乏深情和關注。 另外，寶劍國王也是一個對家庭負責任的好男人。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>寶劍國王</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 可繼續添加更多圖片 -->
+          </div>
+          <!-- 小阿卡那(錢幣) -->
+          <h3 class="text-center effect03" style="font-weight: bold">
+            錢幣系列
+          </h3>
+          <div class="gallery d-flex flex-wrap justify-content-center">
+            <!-- 圖片列表 -->
+            <!-- 錢幣一 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/錢幣/Pents01.webp"
+                alt="錢幣一"
+                data-description='{
+                  "keyword": "物質、地位、財富、繁榮、信任",
+                  "upright": "物質豐富，實用，繁榮，運氣好，生活安泰，穩定、實在的愛情",
+                  "reversed": "欲望強烈，貪婪，不可理喻，奢侈，聲名狼藉，極度空虛，俗氣的戀情",
+                  "meaning": "雲端伸出一只捧著金幣的手，下面花草繁盛，遠處是白色的山巒。 星幣是實際的擁有，代表世俗生活中人們急切渴求的一些東西，諸如金錢和健康。 但是，星幣在指涉擁有物質財富的同時，也與精神世界關聯密切。 正如我們在星幣首牌面中看到的，一條白色的小徑穿過長青藤組成的拱門，便可以抵達象征純潔精神世界的白色山巒。 預測時出現星幣首牌的正位，往往表示著當事人有一個賺錢的新計劃、新機遇，並且前景光明， 但需要努力去實行，才可能有收獲，否則只能是空想一場。星幣首牌也表示當事人可能會有加薪、晉升、進賬等好消息， 有時也有給戀人送定情禮物、看重感官享樂等意思。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>錢幣一</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 錢幣二 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/錢幣/Pents02.webp"
+                alt="錢幣二"
+                data-description='{
+                  "keyword": "協調、娛樂、機動、流通、投資、交通",
+                  "upright": "運氣差，物質方面有煩惱，投資，流通，學會調節，混亂，糾纏的戀情",
+                  "reversed": "用錢過度，超出計劃，表面快樂內心痛苦，投入娛樂，勉強支撐的戀情",
+                  "meaning": "一個頭戴小紅帽的男子，自得其樂地要弄著兩枚金幣。 金幣外面環繞的「8」字形的帶子象征著無限，在他身後，幾葉扁舟在浪尖上顛簸。 這正是星幣二的主要牌意，象征一種動蕩的生活狀態，大多指財務方面的波動。 「風吹雞蛋殼，財散人安樂」過分看重身外之物，反為其所累，在這點上，星幣二中的男子頗像大阿爾克那牌中的倒吊人稍低層次的版本，面對人生的大風大浪，他深暗其道，從容、舉重若輕。 預測時出現星幣二往往暗示當事人雖然在財務或感情方面有起伏或煩惱，但必需想得開，不要鉆牛角尖，要理智灑脫面對。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>錢幣二</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 錢幣三 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/錢幣/Pents03.webp"
+                alt="錢幣三"
+                data-description='{
+                  "keyword": "協力、能力、計劃、討論、一步一步來",
+                  "upright": "商業機會，熟練，水準高，有才能，圓滿完成，榮譽感，缺乏情感交流",
+                  "reversed": "不能勝任，平凡人，物質損失，想法不成熟，不聽勸告，自卑的戀情",
+                  "meaning": "在教堂工作的雕刻師辛勤的工作得到了修女和修士的讚揚。 從畫面中我們可以著到，修女拿著圖紙，同修士一起來檢查工程進度和質量，三人各有分工，正在探討裝修情況，言辭相悅。 二人對雕刻師的工作表示了讚賞，雕刻師也對他們的讚賞做出了語言和情感上的回應。 星幣三通常象征團隊精神，良好的合作關系，溝通和協調，也表示一技之長受到別人的肯定、褒獎和由此產生的精神愉悅。 在感情推測上，星幣三可能暗示當事人的戀人可能會在同事或經常合作的夥伴中產生，另外也暗示當事人與戀人或愛人之間在經濟上都很獨立，彼此欣賞但有可能缺乏心靈交流。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>錢幣三</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 錢幣四 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/錢幣/Pents04.webp"
+                alt="錢幣四"
+                data-description='{
+                  "keyword": "占有、封閉、控制、固守、吝嗇，固守",
+                  "upright": "吝嗇，占有，封閉，可笑的節約，精打細算，追求財當非常執著，遺產問題",
+                  "reversed": "入不敷之，坐吃山空，沒有計劃，不會控制，財運差，物質欲望強烈而招致失敗",
+                  "meaning": "星幣四中的男子像是一個典型的守財奴。他頭戴王冠，衣著華麗，可以看出他非常富有。 他頭頂一枚金幣，腳踩兩枚金幣，在他坐著的箱子里，說不定還有更多金幣呢！ 在財富面前，他如同一只受驚的兔子，神情戒備，瞪著兩只眼睛，像是害怕有人會無緣無故奪走他的財富，哪怕丟失一枚金幣，相信他也會十分痛苦。 為了保護自己的財產不受損失，他甚至搬離了城堡，遠離人群，孤零零地一個人生活著。 可是他的世界會因此安全嗎？預測時出現星幣四正位，暗示當事人或是對當事人有影響的人雖然富有但過於精打細算， 比較吝嗇，不熱衷於幫助別人或從事慈善事業，也暗指富人們一貧如洗的精神生活，預測感情時， 星幣四可能暗示當事人或戀愛對象嫉妒心太重。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>錢幣四</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 錢幣五 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/錢幣/Pents05.webp"
+                alt="錢幣五"
+                data-description='{
+                  "keyword": "艱難時刻，拒絕，健康問題",
+                  "upright": "金錢上的煩惱，物質貧乏，連續失敗，艱難時刻，失業，忠貞不渝的感情，患難夫妻",
+                  "reversed": "居無定所，混亂無序，因貧困而心大亂，想法荒唐，缺少情感支持",
+                  "meaning": "一對貧賤夫妻衣衫襤褸風餐露宿，正走在風雪交加的路途上。 星幣五的畫面讓人過目不忘，像是在描述西方窮人過聖誕節的情景，讓人想起狄更斯筆下的苦海孤雛，和安徒生筆下賣火柴的小女孩。 星幣五是一張以「欠缺、艱難」而聞名的牌， 往往代表貧窮、失業、損失、缺損、健康狀況不佳等等。 畫面中，當那對夫妻路過象征著精神庇佑的教堂時，教堂卻只有窗戶，沒有門，可謂「禱告無門」。 在那樣一個大雪天里，一對夫妻「叫天不應、叫地不聞」，其情其景令人動容。然而，星幣五也並非全是不好的消息， 這對夫妻在風雪和貧窮中的心心相印、不離不棄不正說明人間自有真情在，真誠的愛情超越世間萬事萬物嗎?"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>錢幣五</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 錢幣六 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/錢幣/Pents06.webp"
+                alt="錢幣六"
+                data-description='{
+                  "keyword": "富有、布施、參與、滿足",
+                  "upright": "樂善好施，人緣好，胸懷寬廣，控制對方，坦蕩，生活狀況良好",
+                  "reversed": "自私自利，嫉妒心強，心情惡劣，不乾凈的錢，不知回報，貪慾重",
+                  "meaning": "星幣六中的男子顯然是個有錢人，她穿著講究，商人打扮，兩個乞丐跪在他面前，可憐兮兮地伸出雙手期望得到施舍。 星幣六這張牌有著強烈的社會學意思，社會財富如何分配才會合理？有錢人對社會負有道義上的責任嗎？ 有意思的是，在施舍的過程中，男子的左手還握有一柄象征公正的天平。 這是很耐人尋味的細節，施舍也要有度，予多予少並非可以率性而為，這正體現了理性的力量， 因為施舍只是一種手段，社會閑人、懶人是沒有資格得到別人的施舍的。 畫面中有三個人物， 兩種立場，所以推測時出現星幣六，要仔細斟酌，它可能代表當事人將得到想要的東西，也可能表示當事人可能要為別人付出，或者有良好的理財能力。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>錢幣六</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 錢幣七 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/錢幣/Pents07.webp"
+                alt="錢幣七 "
+                data-description='{
+                  "keyword": "評估、轉變，回報，要等待時機、勿急",
+                  "upright": "辛勤勞動終有所得，仔細評估，回報，態度謹慎，勿太著急，暫時失意或不太滿意的愛情",
+                  "reversed": "多余的努力，無知，決定輕率，不良投資，癡情反被無情誤",
+                  "meaning": "星幣七中的人物是一個青年農夫形象，經過辛勤的勞動，他終有所得， 藤葉上掛著七顆星幣，但從他的表情也可以看出他悵然若失。 預測時出現是星幣七，表明當事人的努力即將或已經獲得一定的回報，但這份回報與當事人的理想還有一段距離， 暗示當事人可能現在正處在「幸福的十字路口」，因為得到並不是終結，而是下一個旅程的開端， 所以當事人需要具備戰略眼光，靜下心來好好想一想，為自己的將來做出更長遠的計劃和安排。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>錢幣七</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 錢幣八 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/錢幣/Pents08.webp"
+                alt="錢幣八 "
+                data-description='{
+                  "keyword": "勤奮、細節、知識、專業、學習、工藝",
+                  "upright": "進取心強，細節，不甘人後，有條理，精益求精，研究，精心呵護的戀情",
+                  "reversed": "浮名，虛榮，沒真本事，不擇手段，感情前景不著好",
+                  "meaning": "畫面中的年青人是一個勤奮的工匠，他制作金幣的態度一絲不茍，精力充沛， 一連制作了很長時間，已經成功了七枚，然後他卻仍然沒有停下來的意思。 為了專心從事他的工作，他還從城堡搬到了一處偏僻的地形，不讓人打擾他的工作，但是他工作的目的其實正是為了大眾。 顯然，這樣的青年肯定是他從事的領域中後起之秀，他技術精湛，前途遠大。 星幣八的出現，暗示著當事人是某領域的出色人才、專家，工作中非常在意細節。 另外，星幣八也有專注才能成就大事，堅持就是勝利、熱情和執著等含義。 有時也告訴當事人可能有急需處理的事情，等待去完成。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>錢幣八</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 錢幣九 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/錢幣/Pents09.webp"
+                alt="錢幣九 "
+                data-description='{
+                  "keyword": "魅力、勇氣、收獲、紀律、精美，自立",
+                  "upright": "精打細算但不吝嗇，被欣賞，實業家，紀律，精美，成就，有眼光，感情安全運轉",
+                  "reversed": "不守信用，為人詬病，計劃中止，因失信而失財，因品行不端的情感危機",
+                  "meaning": "衣著華麗的女子在自己家的園子里散步，過著理想的田園生活。在她的身後，花草繁茂，紅色山巒上的城堡是她的家。 獵鷹是黑暗、粗魯的象征，可是在女子的手上卻顯得如此溫馴，表明女子已經成功地控制了自己的生活， 她的內心不再有各種欲望和物質的渴求。從力量的屬性來看，這張牌很像是大阿爾克那牌中的「力量」牌。 她雖然擁有無盡的財富，但她優雅的氣質，高貴的身份卻與此無關。 預測時出現星幣九，是提醒當事人應該滿足當下祥和、安寧的生活，幸福的秘密在於內心的平和， 不能沉迷於物質欲望，另外，星幣九也有自律的意思。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>錢幣九</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 錢幣十 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/錢幣/Pents10.webp"
+                alt="錢幣十 "
+                data-description='{
+                  "keyword": "富裕、慣例、持久、家產、組成家庭、三代同堂",
+                  "upright": "家境好，妻賢子孝，團體合作良好，衣食無憂，傳統婚姻，夫妻互敬互愛",
+                  "reversed": "背信，團體合作出現不愉快，損失，投資理財要小心，感情會冷戰有糾紛",
+                  "meaning": "這是一個三代同堂、歡樂祥和、衣食無憂的家庭，連小狗似乎也加入了歡樂的行列。 白髮老人慈愛地用手撫摸著小狗，安靜地享受著晚年的安恬時光，兒子和兒媳和諧地談論著日常生活中的一些瑣事。 他們的孩子右手牽著媽媽的衣裙，左手撫摸著一隻狗，這一細節暗示著每一個人都會從生到死，從童年到老年，人生最大的幸福莫過於生亦欣然，死亦欣然。 預測時出現星幣十暗示當事人為人處世要遵循事物的內在發展規律，遵從良心的召喚， 創業過程中會遇到理想的事業夥伴，有時也指在一個關係比較覆雜的團體或公司里，當事人應該找到自己的位置。 預測感情問題時，星幣十大多指和諧相處的戀愛或婚姻，但情感交流可能相對缺乏或缺乏潛在的激情。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>錢幣十</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 錢幣侍從 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/錢幣/Pents11.webp"
+                alt="錢幣侍從 "
+                data-description='{
+                  "keyword": "起作用、繁榮，實踐、實際、信任 ",
+                  "upright": "求知欲旺盛，頭腦優秀，學者型人才，實際，年少老成，知性",
+                  "reversed": "揮霍，知識貧乏，不深刻，視野狹窄，精力充沛，淺薄的戀人",
+                  "meaning": "與「問題少年」寶劍侍從相比，星幣侍從則顯得年少老成，成熟穩重。 從很小起，星幣侍從就善於理財，天生聰穎並且善於學習。 他可能不是領導人或戰勝者，但絕對是一個腳踏實地的人才。 他非常上進、博學，是某些領域天生的學者。星幣侍從不缺乏生活情趣，他心地善良，也很熱情，願意幫助人，只是有些功利主義。 預測時，星幣侍從的出現絕對是一個利好消息，預示著當事人可能有收入方面的好消息傳來，如預測在某領城是否會取得成功，那麽答案是肯定的，如果預測身體方面的情況，則健康大吉。。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>錢幣侍從</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 錢幣騎士 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/錢幣/Pents12.webp"
+                alt="錢幣騎士 "
+                data-description='{
+                  "keyword": "堅定、頑固、現實、悲觀、謹慎",
+                  "upright": "有為青年，目標堅定，講究效率，組織者，實業家，保守的戀人",
+                  "reversed": "懈怠，態度散漫，思想太保守，隨性，停滯，因頑固可能與戀人分手",
+                  "meaning": "在四組小阿爾克那牌的騎士牌中，星幣騎士相對保守。 他很嚴肅，甚至有些過於古板。 從畫面中可以看到，星幣騎士騎著黑馬，穿著鎧甲，戴著頭盔，像是一個戰士，可是那匹象徵著他意志的大黑馬卻因為沒有接到主人發出的指令，只好原地待命。 其實，在星幣騎士冷靜的外表下掩藏著一顆熱情似火的心，一但爆發，他的浪漫與激情其實一點也不比聖杯騎士遜色。 預測時出現星幣騎士，表示當事人是一個勤奮、現實的人，可是要衝鋒陷陣的時候，有時會臨陣退縮， 在預測關於健康、待遇等方面的消息時，星幣騎士都表示前景十分明朗。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>錢幣騎士</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 錢幣皇后 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/錢幣/Pents13.webp"
+                alt="錢幣皇后 "
+                data-description='{
+                  "keyword": "母愛、繁榮、安定、養育、機智、慷慨、可信賴",
+                  "upright": "自立的女性，母愛，包容，溫柔，善解人意，富裕，好客，完美戀人",
+                  "reversed": "愛慕虛榮，生活浮華，態度惡劣，內心冷淡，不可信任，情感危機",
+                  "meaning": "星幣皇后是一個注重實際、非常在意家庭生活福址的母親，她是家里的財政大臣， 經常會督促她的家庭成員注意節約，並會定時帶領全家參加戶外運動。 星幣皇后氣質賢淑，結合了四張小阿爾克那牌中皇后牌的所有美德，她有權杖皇后的權力卻並不濫用，有聖杯皇后的細膩情感卻並不多愁善感，有寶劍皇后的博學多識卻並不賣弄。 她骨子里面是個大女人，在生活中卻是個討人喜歡的小女人，是所有男人夢寐以求的理想戀人，是所有孩心目中的偶像媽媽。 在她身邊生活的人，如沐春風，如飲甘醇。預測時出現星幣皇后，表示當事人的所有願望都會受到祝福，並且成功在即。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>錢幣皇后</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 錢幣國王 -->
+            <div class="gallery-item">
+              <img
+                src="./image/小阿卡那(56張)/錢幣/Pents14.webp"
+                alt="錢幣國王 "
+                data-description='{
+                  "keyword": "事業、進取、支持、熟練、堅定，可靠",
+                  "upright": "有身份，成功人士，營銷人才，熟練，踏實，學識豐富，適宜投資，容易有婚外情",
+                  "reversed": "卑鄙，缺乏經濟頭腦，人際關系危險，警惕卷入三角戀而導致麻煩",
+                  "meaning": "星幣國王是一個成功的統治者，他會更多地考慮他的臣民，而不是他自己。 他從不輕言戰爭，需要遠征伐戰時， 他會很理智地加以分析，「臣民們同意嗎？戰爭會不會給我國的人民帶來災難？這場戰爭有必勝的把握嗎？」他會列出諸多問題，只有每一個問題都是肯定的，他才會打一場戰爭，所以星幣國王是既理智又理想的統治者。 預測時抽到星幣國王，暗示當事人為人處事理性、獨立、勤奮、自律，預測感情時，星幣國王的出現可能是當事人缺乏激情或感情表示得比較含蓄。"
+                }'
+                data-bs-toggle="modal"
+                data-bs-target="#imageModal"
+              />
+              <p>錢幣國王</p>
+              <!-- 卡片名稱 -->
+            </div>
+            <!-- 可繼續添加更多圖片 -->
+          </div>
+        </div>
+        <!-- 模態框 -->
+        <div
+          class="modal fade"
+          id="imageModal"
+          tabindex="-1"
+          aria-labelledby="imageModalLabel"
+          aria-hidden="true"
+          style="background-color: rgba(44, 42, 42, 0.3)"
+        >
+          <div class="modal-dialog">
+            <div
+              class="modal-content"
+              style="background-color: rgb(255, 255, 255)"
+            >
+              <div class="modal-header">
+                <h5 class="modal-title" id="imageModalLabel">塔羅牌意</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body text-center">
+                <img id="modalImage" src="" alt="" />
+                <div id="modalDescription" class="mt-3"></div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  關閉
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br /><br /><br />
+      <hr style="color: #6b7b7e" />
+      <br /><br /><br />
+      <!-- 塔羅牌陣使用 -->
+      <div class="container content-center">
+        <div class="card_array">
+          <h1
+            class="my-4 text3 effect03 text-center"
+            style="font-style: italic"
+            id="use_card_array"
+          >
+            牌陣及使用步驟說明
+          </h1>
+          <br />
+
+          <img
+            class="card_array_picture img-fluid mb-4"
+            src="./image/picture1.jpg"
+            alt="塔羅牌陣示例圖"
+          />
+          <br /><br /><br />
+          <div class="steps">
+            <h2 class="effect03 text-center">新手進行塔羅牌時必了解４步驟</h2>
+            <br />
+            <div class="accordion mt-3" id="stepsAccordion">
+              <!-- 第一步 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="step1Header">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#step1"
+                    aria-expanded="true"
+                    aria-controls="step1"
+                    style="background-color: #857777; color: #dae0e1"
+                  >
+                    1. 了解自己的提問...
+                  </button>
+                </h2>
+                <div
+                  id="step1"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="step1Header"
+                  data-bs-parent="#stepsAccordion"
+                >
+                  <div class="accordion-body">
+                    多數人對於自己的心中的問題總是不夠清楚，想獲得答案是自己的還是對方的心情、給予自己執行上的建議還是單純想知道做完這件事後的運勢。<br />
+                    當我們用模糊不清楚的方式進行問題，自然也只能得到模糊的答案，進行塔羅占卜時，非常需要清楚而直白的問題。<br />
+                    尤其塔羅牌占卜並不是單純進行吉凶預兆，而是給予我們對於問題本身提供不同的見解與思考方式的對話，因此理解自己想問的問題非常重要。<br />
+                    ．好的問題：「該怎麼做才能找到彼此契合的戀人？」<br />
+                    ．不建議的問題：「為什麼我沒有情人？」<br />
+                    問問題的方式請以自己「想怎麼做？」的想法，搭配「該如何做才能加以實現」這樣的形式對策，才能得到較明確而詳細的回饋。
+                  </div>
+                </div>
+              </div>
+              <!-- 第二步 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="step2Header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#step2"
+                    aria-expanded="false"
+                    aria-controls="step2"
+                    style="background-color: #a39393; color: #dae0e1"
+                  >
+                    2. 使用牌陣，找到解讀的方向...
+                  </button>
+                </h2>
+                <div
+                  id="step2"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="step2Header"
+                  data-bs-parent="#stepsAccordion"
+                >
+                  <div class="accordion-body">
+                    決定完問題後，可以透過牌陣來得出自己想要的解答，牌陣可以因應問題的方式以單張牌／二選一／時間之流等牌陣來進行占卜。<br />
+                    建議在占卜前，先抽一張「現在的自己處於何者狀況？」的牌，給予此刻自己詮釋、了解現階段自己的心理狀態。
+                  </div>
+                </div>
+              </div>
+              <!-- 第三步 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="step3Header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#step3"
+                    aria-expanded="false"
+                    aria-controls="step3"
+                    style="background-color: #857777; color: #dae0e1"
+                  >
+                    3. 洗牌及排列...
+                  </button>
+                </h2>
+                <div
+                  id="step3"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="step3Header"
+                  data-bs-parent="#stepsAccordion"
+                >
+                  <div class="accordion-body">
+                    塔羅牌占卜是透過偶然抽出的牌進行解讀，所以每次進行詢問時都需要重新洗牌、隨機將牌卡排列才能得到相對應的解答。<br />
+                    而透過轉動牌卡的過程，也能讓自己重新集中精神，並找出心中的那張解答卡。
+                  </div>
+                </div>
+              </div>
+              <!-- 第四步 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="step4Header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#step4"
+                    aria-expanded="false"
+                    aria-controls="step4"
+                    style="background-color: #a39393; color: #dae0e1"
+                  >
+                    4. 解讀牌面，占卜後留下紀錄...
+                  </button>
+                </h2>
+                <div
+                  id="step4"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="step4Header"
+                  data-bs-parent="#stepsAccordion"
+                >
+                  <div class="accordion-body">
+                    想著自己的問題後，再翻開牌卡，詳細解讀上頭顯示的文字與提醒，這是你自身潛意識與牌卡解答相連的象徵。<br />
+                    塔羅牌占卜的準確度會隨著占卜的次數而提升，在解讀的過程中也會因為次數多而更加得心應手；因此很也很建議在每次占卜完後都做簡單的筆記、記錄此次的問題與解答。
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br /><br />
+      <hr />
+      <br /><br />
+      <h1 class="effect03 text-center" id="Common_card_formations">常見牌陣</h1>
+      <div class="container py-5">
+        <div class="row gy-4">
+          <!-- 單張牌陣 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="image-container">
+              <div
+                style="
+                  text-align: center;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                <img
+                  src="./image/0單張牌.jpg"
+                  style="height: 195px; width: 200px"
+                />
+              </div>
+              <div class="description">
+                <div class="title">✦ 單張牌：以一問一答的方式引出答案</div>
+                <div class="content text-truncate">
+                  多用於沒有時間限制，想直截了當得到解答時使用；除此之外也能用於日常對於未來的運勢測驗，得出簡單的預測。
+                  建議的問題：想掌握目前的狀況、想知道自己／對方的心情、想得到接下來的發展、想知道接下來該如何執行、想得到針對式的單一問題解答。
+                  可嘗試用這些方式問問題：今天該注意什麼事情？那個人的態度突然變冷淡，對方現在的想法是？
+                </div>
+                <br /><br />
+                <button
+                  class="read-more"
+                  onclick="expandImage('✦ 單張牌：以一問一答的方式引出答案', '多用於沒有時間限制，想直截了當得到解答時使用；除此之外也能用於日常對於未來的運勢測驗，得出簡單的預測。建議的問題：想掌握目前的狀況、想知道自己／對方的心情、想得到接下來的發展、想知道接下來該如何執行、想得到針對式的單一問題解答。可嘗試用這些方式問問題：今天該注意什麼事情？那個人的態度突然變冷淡，對方現在的想法是？.', src='./image/0單張牌.jpg')"
+                >
+                  Read More
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- 三張牌陣 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="image-container">
+              <img src="./image/1三張牌牌陣.png" />
+              <div class="description">
+                <div class="title">✦ 三張牌｜時間之流：</div>
+                <div class="content text-truncate">
+                  過去➊ 》現在➋ 》未來➌ ; 身➊ 》心➋ 》靈➌ ; 原因➊ 》目前結果➋
+                  》建言➌ ; 建議➊ 》建議➋ 》建議➌
+                </div>
+                <br /><br />
+                <button
+                  class="read-more"
+                  onclick="expandImage('✦ 三張牌｜時間之流：', '過去➊ 》現在➋ 》未來➌ ==>在解的時候，請像說故事一樣，將過去現在未來說清楚 ; 身➊ 》心➋ 》靈➌ ==>建議問法：請問在近期身心靈方面有什麼要注意的地方？; 原因➊ 》目前結果➋ 》建言➌ ==>建議問法：針對目前卡關的點，我能做些什麼？; 建議➊ 》建議➋ 》建議➌ ==>想找到心儀的另一半，請牌卡給我3個感情的建議', './image/1三張牌牌陣.png')"
+                >
+                  Read More
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- 聖三角陣 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="image-container">
+              <img src="./image/2聖三角.png" />
+              <div class="description">
+                <div class="title">✦ 三張牌｜聖三角牌陣：</div>
+                <div class="content text-truncate">
+                  我以為的狀態➊ 》真實的狀態➋ 》建言➌
+                </div>
+                <br /><br />
+                <button
+                  class="read-more"
+                  onclick="expandImage('✦ 三張牌｜聖三角牌陣：', '我以為的狀態➊ 》真實的狀態➋ 》建言➌ ==> 建議問法：針對目前卡關的狀態，請讓我看到事件的真相', './image/2聖三角.png')"
+                >
+                  Read More
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- 四張牌陣 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="image-container">
+              <img src="./image/3四張牌.png" />
+              <div class="description">
+                <div class="title">✦ 四張牌｜直指核心：</div>
+                <div class="content text-truncate">
+                  問題核心➊ 》障礙➋ 》對策➌ 》優勢➍
+                </div>
+                <br /><br />
+                <button
+                  class="read-more"
+                  onclick="expandImage('✦ 四張牌｜直指核心：', '問題核心➊ 》障礙➋ 》對策➌ 》優勢➍ ==> 建議問法：OO一直都沒有起色/一直卡關，到底是發生什麼事？而我能做些什麼？', './image/3四張牌.png')"
+                >
+                  Read More
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- 五張牌-1 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="image-container">
+              <img src="./image/4五張牌-1.png" />
+              <div class="description">
+                <div class="title">✦ 五張牌｜二選一＆可能的結果：</div>
+                <div class="content text-truncate">
+                  選項A的狀態➊ 》選項B的狀態➋ 》選項A可能的結果➌
+                  》選項B可能的結果➍ 》當事人的狀態➎
+                </div>
+                <br /><br />
+                <button
+                  class="read-more"
+                  onclick="expandImage('✦ 五張牌｜二選一＆可能的結果：', '選項A的狀態➊ 》選項B的狀態➋ 》選項A可能的結果➌ 》選項B可能的結果➍ 》當事人的狀態➎  ==> 建議問法：目前有2個工作在挑選，請高我讓我知道這兩個工作的狀態＆可能的結果 ', './image/4五張牌-1.png')"
+                >
+                  Read More
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- 五張牌-2 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="image-container">
+              <img src="./image/5五張牌-2.png" />
+              <div class="description">
+                <div class="title">✦ 五張牌｜感情萬用牌陣：</div>
+                <div class="content text-truncate">
+                  我的狀態➊ 》本人對我的感情態度➋ 》對方的狀態➌
+                  》對方對我的感情態度➍ 》可能的結果➎
+                </div>
+                <br /><br />
+                <button
+                  class="read-more"
+                  onclick="expandImage('✦ 五張牌｜感情萬用牌陣：', '我的狀態➊ 》本人對我的感情態度➋ 》對方的狀態➌ 》對方對我的感情態度➍ 》可能的結果➎  ==> 建議問法：請問我與OOO的目前關係狀態＆可能的發展？ ', './image/5五張牌-2.png')"
+                >
+                  Read More
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="overlay"
+          class="overlay"
+          style="display: none"
+          onclick="closeExpanded()"
+        ></div>
+        <div id="expanded" class="expanded" style="display: none">
+          <span class="close" onclick="closeExpanded()">&times;</span>
+          <img id="expanded-image" src="" alt="Expanded Image" />
+          <div class="title" id="expanded-title"></div>
+          <div class="content" id="expanded-content"></div>
+        </div>
+      </div>
+      <br /><br />
+      <hr style="color: white" />
+      <div class="row row-cols-3" style="height: 10em">
+        <div class="col-4" style="font-size: large">
+          <p>TAROTAP</p>
+          <p>線上塔羅學習</p>
+        </div>
+        <div class="col-4" style="font-size: large; line-height: 1.8">
+          <p>網站地圖</p>
+          <a href="#" class="d-block d-flex my_link">首頁</a>
+          <a href="#Card_meaning" class="d-block d-flex my_link">塔羅牌意</a>
+          <a href="#use_card_array" class="d-block d-flex my_link"
+            >排陣使用方法</a
+          >
+          <a href="#Common_card_formations" class="d-block d-flex my_link"
+            >塔羅常見牌陣</a
+          >
+        </div>
+        <div class="col-4" style="font-size: large">
+          <p>聯絡我們</p>
+          <a
+            href="https://forms.gle/etR1Wqvbp7EAAQ6P9"
+            class="d-block d-flex text-white-50 my_link"
+            >tarotworld1210@gmail.com</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- 懸浮按鈕(回到最上層) -->
+    <button class="scroll-to-top" id="scrollToTopBtn"></button>
+
+    <!-- 引入 Bootstrap JavaScript -->
+    <script>
+      // 換背景按鈕
+      function changeBackground(gradient, borderColor) {
+        document.body.style.background = gradient; // 設置背景顏色
+        const button = document.getElementById("dropdownMenuButton");
+        button.style.background = gradient; // 設置按鈕背景
+        button.style.borderColor = borderColor; // 設置按鈕邊框顏色
+      }
+
+      // 事件委派：監聽整個 body，避免局限於單一 gallery
+      document.body.addEventListener("click", function (event) {
+        if (
+          event.target.tagName === "IMG" &&
+          event.target.closest(".gallery")
+        ) {
+          const modalImage = document.getElementById("modalImage");
+          const modalDescription = document.getElementById("modalDescription");
+          const modalTitle = document.getElementById("imageModalLabel");
+
+          // 更新模態框的圖片和標題
+          modalImage.src = event.target.src;
+          modalImage.alt = event.target.alt;
+          modalTitle.textContent = event.target.alt; // 更新模態框的標題為卡片名稱
+
+          // 解析並顯示圖片對應的描述
+          const description = JSON.parse(event.target.dataset.description);
+
+          // 格式化顯示每個段落
+          const keywordSection = `<p class="section-title">關鍵詞</p><p class="section-content">${description.keyword}</p>`;
+          const uprightSection = `<p class="section-title">正位</p><p class="section-content">${description.upright}</p>`;
+          const reversedSection = `<p class="section-title">逆位</p><p class="section-content">${description.reversed}</p>`;
+          const meaningSection = `<p class="section-title">牌面含義</p><p class="section-content">${description.meaning}</p>`;
+
+          // 更新模態框的內容
+          modalDescription.innerHTML =
+            keywordSection + uprightSection + reversedSection + meaningSection;
+        }
+      });
+
+      // 塔羅牌意框
+      function expandImage(title, content, imageUrl) {
+        document.getElementById("expanded-title").innerText = title;
+        document.getElementById("expanded-content").innerText = content;
+        document.getElementById("expanded-image").src = imageUrl;
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("expanded").style.display = "block";
+      }
+
+      function closeExpanded() {
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("expanded").style.display = "none";
+      }
+
+      // 懸浮按鈕(回到最上層)
+      // 當用戶滾動時，顯示或隱藏按鈕
+      window.onscroll = function () {
+        const button = document.getElementById("scrollToTopBtn");
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          button.style.display = "block";
+        } else {
+          button.style.display = "none";
+        }
+      };
+
+      // 當按鈕被點擊時，滾動回到最上層並播放爬升動畫
+      document.getElementById("scrollToTopBtn").onclick = function () {
+        const button = document.getElementById("scrollToTopBtn");
+        button.classList.add("climbing");
+
+        // 延遲滾動到最上層，與動畫同步
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 3000);
+
+        // 在動畫結束後移除 class
+        setTimeout(() => {
+          button.classList.remove("climbing");
+        }, 5000);
+      };
+
+      // 抽牌系統
+      // 塔羅牌圖片列表
+      const tarotImages = [
+        "./image/大阿卡那(22張)/0愚者.webp",
+        "./image/大阿卡那(22張)/1魔術師.webp",
+        "./image/大阿卡那(22張)/2女祭師.webp",
+        "./image/大阿卡那(22張)/3皇后.webp",
+        "./image/大阿卡那(22張)/4皇帝.webp",
+        "./image/大阿卡那(22張)/5教皇.webp",
+        "./image/大阿卡那(22張)/6戀人.webp",
+        "./image/大阿卡那(22張)/7戰車.webp",
+        "./image/大阿卡那(22張)/8力量.webp",
+        "./image/大阿卡那(22張)/9隱者.webp",
+        "./image/大阿卡那(22張)/10命運之輪.webp",
+        "./image/大阿卡那(22張)/11正義.webp",
+        "./image/大阿卡那(22張)/12倒吊人.webp",
+        "./image/大阿卡那(22張)/13死神.webp",
+        "./image/大阿卡那(22張)/14節制.webp",
+        "./image/大阿卡那(22張)/15惡魔.webp",
+        "./image/大阿卡那(22張)/16高塔.webp",
+        "./image/大阿卡那(22張)/17星星.webp",
+        "./image/大阿卡那(22張)/18月亮.webp",
+        "./image/大阿卡那(22張)/19太陽.webp",
+        "./image/大阿卡那(22張)/20審判.webp",
+        "./image/大阿卡那(22張)/21世界.webp",
+        "./image/小阿卡那(56張)/聖杯/Cups01.webp",
+        "./image/小阿卡那(56張)/聖杯/Cups02.webp",
+        "./image/小阿卡那(56張)/聖杯/Cups03.webp",
+        "./image/小阿卡那(56張)/聖杯/Cups04.webp",
+        "./image/小阿卡那(56張)/聖杯/Cups05.webp",
+        "./image/小阿卡那(56張)/聖杯/Cups06.webp",
+        "./image/小阿卡那(56張)/聖杯/Cups07.webp",
+        "./image/小阿卡那(56張)/聖杯/Cups08.webp",
+        "./image/小阿卡那(56張)/聖杯/Cups09.webp",
+        "./image/小阿卡那(56張)/聖杯/Cups10.webp",
+        "./image/小阿卡那(56張)/聖杯/Cups11.webp",
+        "./image/小阿卡那(56張)/聖杯/Cups12.webp",
+        "./image/小阿卡那(56張)/聖杯/Cups13.webp",
+        "./image/小阿卡那(56張)/聖杯/Cups14.webp",
+        "./image/小阿卡那(56張)/錢幣/Pents01.webp",
+        "./image/小阿卡那(56張)/錢幣/Pents02.webp",
+        "./image/小阿卡那(56張)/錢幣/Pents03.webp",
+        "./image/小阿卡那(56張)/錢幣/Pents04.webp",
+        "./image/小阿卡那(56張)/錢幣/Pents05.webp",
+        "./image/小阿卡那(56張)/錢幣/Pents06.webp",
+        "./image/小阿卡那(56張)/錢幣/Pents07.webp",
+        "./image/小阿卡那(56張)/錢幣/Pents08.webp",
+        "./image/小阿卡那(56張)/錢幣/Pents09.webp",
+        "./image/小阿卡那(56張)/錢幣/Pents10.webp",
+        "./image/小阿卡那(56張)/錢幣/Pents11.webp",
+        "./image/小阿卡那(56張)/錢幣/Pents12.webp",
+        "./image/小阿卡那(56張)/錢幣/Pents13.webp",
+        "./image/小阿卡那(56張)/錢幣/Pents14.webp",
+        "./image/小阿卡那(56張)/寶劍/Swords01.webp",
+        "./image/小阿卡那(56張)/寶劍/Swords02.webp",
+        "./image/小阿卡那(56張)/寶劍/Swords03.webp",
+        "./image/小阿卡那(56張)/寶劍/Swords04.webp",
+        "./image/小阿卡那(56張)/寶劍/Swords05.webp",
+        "./image/小阿卡那(56張)/寶劍/Swords06.webp",
+        "./image/小阿卡那(56張)/寶劍/Swords07.webp",
+        "./image/小阿卡那(56張)/寶劍/Swords08.webp",
+        "./image/小阿卡那(56張)/寶劍/Swords09.webp",
+        "./image/小阿卡那(56張)/寶劍/Swords10.webp",
+        "./image/小阿卡那(56張)/寶劍/Swords11.webp",
+        "./image/小阿卡那(56張)/寶劍/Swords12.webp",
+        "./image/小阿卡那(56張)/寶劍/Swords13.webp",
+        "./image/小阿卡那(56張)/寶劍/Swords14.webp",
+        "./image/小阿卡那(56張)/權杖/Wands01.webp",
+        "./image/小阿卡那(56張)/權杖/Wands02.webp",
+        "./image/小阿卡那(56張)/權杖/Wands03.webp",
+        "./image/小阿卡那(56張)/權杖/Wands04.webp",
+        "./image/小阿卡那(56張)/權杖/Wands05.webp",
+        "./image/小阿卡那(56張)/權杖/Wands06.webp",
+        "./image/小阿卡那(56張)/權杖/Wands07.webp",
+        "./image/小阿卡那(56張)/權杖/Wands08.webp",
+        "./image/小阿卡那(56張)/權杖/Wands09.webp",
+        "./image/小阿卡那(56張)/權杖/Wands10.webp",
+        "./image/小阿卡那(56張)/權杖/Wands11.webp",
+        "./image/小阿卡那(56張)/權杖/Wands12.webp",
+        "./image/小阿卡那(56張)/權杖/Wands13.webp",
+        "./image/小阿卡那(56張)/權杖/Wands14.webp",
+      ];
+
+      // 隨機抽牌函數
+      function drawRandomCard() {
+        // 隨機選擇一張塔羅牌
+        const randomIndex = Math.floor(Math.random() * tarotImages.length);
+        const randomImage = tarotImages[randomIndex];
+
+        // 顯示圖片
+        const cardElement = document.getElementById("random-card");
+        cardElement.src = randomImage;
+
+        // 顯示卡片區域並加上動畫
+        const tarotCardDiv = document.getElementById("tarot-card");
+        tarotCardDiv.style.display = "block";
+        tarotCardDiv.classList.remove("card-animation"); // 移除舊動畫
+        void tarotCardDiv.offsetWidth; // 觸發重排，確保動畫可以重新啟動
+        tarotCardDiv.classList.add("card-animation");
+      }
+
+      // 綁定按鈕事件
+      document
+        .getElementById("draw-card-btn")
+        .addEventListener("click", drawRandomCard);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+/* 動畫樣式 */
+.card-animation {
+    opacity: 0;
+    transform: translateY(-100px); /* 拉長移動軌跡，將垂直移動的距離改為 -100px */
+    animation: drawCardAnimation 0.8s forwards; /* 延長動畫持續時間至0.8秒 */
+}
+
+@keyframes drawCardAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-200px); /* 開始時從 -100px 開始 */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* 結束時回到正常位置 */
+    }
+}

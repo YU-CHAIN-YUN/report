@@ -1,0 +1,57 @@
+/* 標題文字 */
+.text1 {
+    font-family: "微软雅黑", "Dosis", sans-serif;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 50px;
+    text-transform: uppercase;
+    position: relative;
+  }
+  /* 首頁標題 */
+  .effect01 {
+    color: #d16d6d;
+    text-shadow: 1px -1px 0 #f3c1e6, -1px 2px 1px #f4deef,
+      -2px 4px 1px #fefefe;
+  }
+
+  .text2 {
+    font-family: "微软雅黑", "Dosis", sans-serif;
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 50px;
+    text-transform: uppercase;
+    position: relative;
+  }
+  /* 首頁小標題 */
+  .effect02 {
+    color: #120c0c;
+    text-shadow: 1px -1px 0 #fffbfe, -1px 2px 1px #dcdcdc;
+  }
+  /* 內容標題 */
+  .text3 {
+    font-family: "微软雅黑", "Dosis", sans-serif;
+    font-size: 30px;
+    text-align: left;
+    font-weight: bold;
+    line-height: 10px;
+    position: relative;
+  }
+
+  .effect03 {
+    color: #dfd5d5;
+    text-shadow: 1px -1px 0 #360331;
+  }
+  /* 內容標題的小內容 */
+  .text4 {
+    font-family: "微软雅黑", "Dosis", sans-serif;
+    font-size: 5px;
+    text-align: left;
+    position: relative;
+  }
+
+  .effect04 {
+    color: #f1ebf1;
+    text-shadow: 1px -1px 0 #5b033d;
+  }

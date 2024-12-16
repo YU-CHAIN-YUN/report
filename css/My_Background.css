@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    transition: background 0.5s ease;
+    background: #000000; /* 預設背景為黑色 */
+  }
+
+  .color-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+
+  /* 顏色預覽 */
+  .color-option-1 {
+    background: linear-gradient(to right, #f3e6ff, #d6f5ff);
+  }
+
+  .color-option-2 {
+    background: linear-gradient(to right, #f2d6ff, #b3e0ff);
+  }
+
+  .color-option-3 {
+    background: linear-gradient(to right, #ffd6e5, #ffcc99);
+  }
+
+  .color-option-4 {
+    background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+  }
+
+  .color-option-5 {
+    background: #000; /* 黑色選項 */
+  }
+
+  /* 按鈕樣式 */
+  .dropdown-toggle {
+    width: 50px;
+    height: 50px;
+    border: 3px solid #fff; /* 明顯邊框 */
+    transition: background 0.3s ease, border-color 0.3s ease; /* 平滑過渡 */
+    border-radius: 50%;
+  }

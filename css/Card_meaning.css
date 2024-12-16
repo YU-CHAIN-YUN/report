@@ -1,0 +1,56 @@
+/* 彈框內牌意 */
+.gallery img {
+    width: 8rem;
+    height: 12rem;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  .gallery-item {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .modal-body img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+  }
+  /* 標題樣式 */
+  #imageModalLabel {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+  }
+  /* 文字內容樣式 */
+  #modalDescription {
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.6;
+    text-align: left;
+    color: #555;
+  }
+  /* 分段落標題 */
+  .modal-body .section-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: #333;
+  }
+  /* 關鍵詞、正位、逆位、牌面含義的段落間距 */
+  .modal-body .section-content {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  p {
+    font-family: "微软雅黑", "Dosis", sans-serif;
+    text-align: center;
+    position: relative;
+    color: #6b7b7e;
+  }
