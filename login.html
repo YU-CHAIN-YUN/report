@@ -40,6 +40,72 @@
         background-color: #8f2ba2; /* 滑鼠移過時的效果 */
         color: white;
       }
+
+      #cat {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-image: url(./image/catt.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: transparent;
+        width: 150px;
+        height: 150px;
+        transition: transform 0.2s ease;
+      }
+
+      #response {
+        position: fixed;
+        bottom: 30px;
+        right: 50px;
+        border-radius: 10%;
+        padding: 10px;
+        
+      }
+
+      #cat:hover {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-image: url(./image/cattt.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: transparent;
+        width: 150px;
+        height: 150px;
+        transition: transform 0.2s ease;
+        cursor:pointer;
+      }
+
+      @keyframes shake {
+        0% {
+          transform: translateX(0);
+        }
+        25% {
+          transform: translateX(-10px);
+        }
+        50% {
+          transform: translateX(10px);
+        }
+        75% {
+          transform: translateX(-10px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      .shake {
+        animation: shake 0.5s;
+      }
+
+      #response {
+        margin-top: 20px;
+        font-size: 20px;
+        text-align: center;
+      }
     </style>
   </head>
 
@@ -173,6 +239,12 @@
         </div>
       </div>
     </div>
+    <!-- 貓貓圖 -->
+    <div>
+      <div id="cat" onclick="showResponse()"></div><br><br>
+      <!-- 回應 -->
+      <div id="response" class="mt-3"></div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
@@ -223,6 +295,36 @@
           localStorage.setItem("nickname", nickname); // 儲存暱稱
           window.location.href = "./index.html"; // 跳回首頁
         }
+      }
+
+      // cat效果
+      function showResponse() {
+        // 震動效果
+        const cat = document.getElementById("cat");
+        cat.classList.add("shake");
+
+        // 清除震動效果動畫
+        setTimeout(() => {
+          cat.classList.remove("shake");
+        }, 500);
+
+        // 隨機顯示語言回應
+        const responses = [
+          "Hello!", // English
+          "你好！", // Chinese
+          "洗吧!!不要再碰囉", // Spanish
+          "Bonjour!", // French
+          "Hallo!", // German
+          "COW!牛的一種", // Italian
+        ];
+
+        const randomResponse =
+          responses[Math.floor(Math.random() * responses.length)];
+
+        // 顯示回應並將文字顏色設為白色
+        const responseElement = document.getElementById("response");
+        responseElement.textContent = randomResponse;
+        responseElement.style.color = "white"; // 設置文字顏色為白色
       }
     </script>
   </body>
