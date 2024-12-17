@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 改變圖示連結 -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="icon" href="./moon-stars-fill.svg" />
+    <title>認識塔羅TAROT會員登入與註冊</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/My_Background.css" />
+
+    <style>
+      .container {
+        max-width: 400px;
+        margin-top: 50px;
+      }
+      #login {
+        background-color: #dce1e6; /* 淺灰色背景 */
+        padding: 20px;
+        border-radius: 80px;
+      }
+      #register {
+        background-color: #dce1e6; /* 淺灰色背景 */
+        padding: 20px;
+        border-radius: 80px;
+      }
+      .btn-pill {
+        border-radius: 50px; /* 膠囊狀按鈕 */
+        border: #8f2ba2;
+        background-color: #9665eb;
+      }
+      .btn-pill:hover {
+        background-color: #8f2ba2; /* 滑鼠移過時的效果 */
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 導覽列(左) -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand text-secondary bi bi-moon-stars fw-bold"
+          href="./index.html"
+        >
+          認識塔羅TAROT</a
+        >
+        <!-- 回到首頁 -->
+        <a href="./index.html">
+          <button
+            class="rounded-pill bg-dark px-3 justify-content-center align-items-center text-light"
+          >
+            回到首頁
+          </button>
+        </a>
+      </div>
+    </nav>
+
+    <!-- 會員登入 -->
+    <div class="container">
+      <div id="login" class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center">會員登入</h2>
+          <form>
+            <div class="form-group">
+              <label for="username">帳號:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                name="username"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">密碼:</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                name="password"
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-primary btn-pill btn-block"
+              onclick="handleLogin(event)"
+            >
+              登入
+            </button>
+          </form>
+          <div class="text-center mt-2">
+            <a href="#register" class="link">註冊會員</a>
+          </div>
+        </div>
+      </div>
+      <!-- 註冊會員框 -->
+      <div id="register" class="card mt-4" style="display: none">
+        <div class="card-body">
+          <h2 class="card-title text-center">註冊會員</h2>
+          <form>
+            <div class="form-group">
+              <label for="nickname">姓名(暱稱):</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nickname"
+                name="nickname"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="reg_username">帳號:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="reg_username"
+                name="reg_username"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="reg_password">密碼:</label>
+              <input
+                type="password"
+                class="form-control"
+                id="reg_password"
+                name="reg_password"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="confirm_password">再次確認密碼:</label>
+              <input
+                type="password"
+                class="form-control"
+                id="confirm_password"
+                name="confirm_password"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="birthday">生日:</label>
+              <input
+                type="date"
+                class="form-control"
+                id="birthday"
+                name="birthday"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-success btn-pill btn-block"
+              onclick="handleRegister(event)"
+            >
+              註冊
+            </button>
+          </form>
+          <div class="text-center mt-2">
+            <a href="#login" class="link">返回登入</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      document
+        .querySelector('.link[href="#register"]')
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          document.getElementById("login").style.display = "none";
+          document.getElementById("register").style.display = "block";
+        });
+
+      document
+        .querySelector('.link[href="#login"]')
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          document.getElementById("register").style.display = "none";
+          document.getElementById("login").style.display = "block";
+        });
+
+      function handleLogin(event) {
+        event.preventDefault(); // 防止表單提交刷新
+        const username = document.getElementById("username").value; // 帳號
+        const password = document.getElementById("password").value; // 密碼
+
+        if (!username || !password) {
+          alert("請輸入帳號與密碼!");
+        } else {
+          localStorage.setItem("nickname", username); // 儲存帳號作為暱稱
+          window.location.href = "./index.html"; // 跳回首頁
+        }
+      }
+
+      function handleRegister(event) {
+        event.preventDefault(); // 防止表單提交刷新
+        const nickname = document.getElementById("nickname").value; // 暱稱
+        const regUsername = document.getElementById("reg_username").value; // 帳號
+        const regPassword = document.getElementById("reg_password").value; // 密碼
+        const confirmPassword =
+          document.getElementById("confirm_password").value; // 確認密碼
+
+        if (!nickname || !regUsername || !regPassword || !confirmPassword) {
+          alert("所有欄位皆為必填!");
+        } else if (regPassword !== confirmPassword) {
+          alert("密碼與確認密碼不一致!");
+        } else {
+          localStorage.setItem("nickname", nickname); // 儲存暱稱
+          window.location.href = "./index.html"; // 跳回首頁
+        }
+      }
+    </script>
+  </body>
+</html>
