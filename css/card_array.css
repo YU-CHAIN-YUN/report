@@ -33,7 +33,7 @@
 
   .image-container:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 15px rgba(135, 31, 31, 0.2);
   }
 
   .image-container img {

@@ -43,7 +43,7 @@
 
       #cat {
         position: fixed;
-        bottom: 30px;
+        bottom: 40px;
         right: 30px;
         background-image: url(./image/catt.png);
         background-size: contain;
@@ -61,12 +61,11 @@
         right: 50px;
         border-radius: 10%;
         padding: 10px;
-        
       }
 
       #cat:hover {
         position: fixed;
-        bottom: 30px;
+        bottom: 40px;
         right: 30px;
         background-image: url(./image/cattt.png);
         background-size: contain;
@@ -76,7 +75,7 @@
         width: 150px;
         height: 150px;
         transition: transform 0.2s ease;
-        cursor:pointer;
+        cursor: pointer;
       }
 
       @keyframes shake {
@@ -241,9 +240,13 @@
     </div>
     <!-- 貓貓圖 -->
     <div>
-      <div id="cat" onclick="showResponse()"></div><br><br>
+      <div id="cat" onclick="showResponse()"></div>
+      <br /><br />
       <!-- 回應 -->
-      <div id="response" class="mt-3"></div>
+      <div
+        id="response"
+        class=" mt-3"
+      ></div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -312,10 +315,10 @@
         const responses = [
           "Hello!", // English
           "你好！", // Chinese
-          "洗吧!!不要再碰囉", // Spanish
+          "不要再碰囉", 
           "Bonjour!", // French
           "Hallo!", // German
-          "COW!牛的一種", // Italian
+          "COW!牛的一種", 
         ];
 
         const randomResponse =
@@ -324,8 +327,10 @@
         // 顯示回應並將文字顏色設為白色
         const responseElement = document.getElementById("response");
         responseElement.textContent = randomResponse;
-        responseElement.style.color = "white"; // 設置文字顏色為白色
+        responseElement.style.color = "black"; // 設置文字顏色為白色
+        responseElement.style.backgroundColor = "white";
       }
+
     </script>
   </body>
 </html>
